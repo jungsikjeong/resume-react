@@ -1,0 +1,65 @@
+[
+  {
+    "id": 0,
+    "title": "🤍 오늘도 공차하세요!",
+    "tags": ["React", "StyledComponent", "Redux", "Node.js", "MongoDB"],
+    "thumbnail": "./images/thumbnail/gongcha.png",
+    "github": "https://github.com/jungsikjeong/React_Gongcha",
+    "date": "2020.08.01 ~ 2020.10.11",
+    "contents": []
+  },
+  {
+    "id": 1,
+
+    "title": "🤍 NewJeans-card-website",
+    "tags": ["Ejs", "Express", "MongoDB", "Mongoose"],
+    "thumbnail": "./images/thumbnail/NewJeans_card-web.gif",
+    "github": "https://github.com/jungsikjeong/exercise-book/tree/master/web02",
+    "date": "2023.01.29 ~ 2023.02.05",
+    "contents": []
+  },
+  {
+    "id": 2,
+
+    "title": "🤍 NewJeans!",
+    "tags": [
+      "React",
+      "StyledComponent",
+      "Redux",
+      "Redux/toolkit",
+      "use-image",
+      "Node.js",
+      "MongoDB"
+    ],
+    "thumbnail": "./images/thumbnail/NewJeans!.png",
+    "github": "https://github.com/jungsikjeong/newJeans",
+    "date": "2023.02.20 ~ 2023.03.22",
+    "contents": []
+  },
+  {
+    "id": 3,
+
+    "title": "🤍 NewJeans-Gallery",
+    "tags": ["React", "React-recoil", "Typescript"],
+    "thumbnail": "./images/thumbnail/NewJeans-Gallery.gif",
+    "github": "https://github.com/jungsikjeong/newJeansGallery",
+    "date": "2023.03.24 ~ 2023.04.27",
+    "contents": []
+  },
+  {
+    "id": 4,
+
+    "title": "🤍 Do-Good_Evening!",
+    "tags": [
+      "Nextjs13",
+      "Tailwindcss",
+      "React-recoil",
+      "React-hook-form",
+      "Firebase"
+    ],
+    "thumbnail": "./images/thumbnail/do-good-evening.png",
+    "github": "https://github.com/jungsikjeong/do-good-evening",
+    "date": "2023.09.19 ~ 2023.10.04",
+    "contents": []
+  }
+]

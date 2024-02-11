@@ -11,12 +11,28 @@ const fontSize = {
   //   subTitle: '1.875rem',
 };
 
+const common = {
+  flexCenter: `
+    display: flex;
+    justify-contents: center;
+    align-items: center;
+  `,
+  flexCenterColumn: `
+    display: flex;
+    flex-direction: column;
+    justify-contents: center;
+    align-items: center;
+  `,
+};
+
 export type ColorsTypes = typeof colors;
 export type FontSizeTypes = typeof fontSize;
+export type CommonTypes = typeof common;
 
 const theme: DefaultTheme = {
   colors,
   fontSize,
+  common,
 };
 
 export default theme;

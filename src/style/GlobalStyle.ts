@@ -12,6 +12,11 @@ a {
   }
 }
 
+ul{
+  padding: 0;
+  margin: 0;
+}
+
 body {
   color:${({ theme }) => theme.colors.break};
 }
