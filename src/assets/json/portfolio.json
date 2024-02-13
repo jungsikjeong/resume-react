@@ -178,11 +178,11 @@
     "id": 6,
     "title": "🔖 Vue-book",
     "tags": ["Vue3", "Vuex", "Typescript", "Firebase"],
-    "thumbnail": "./images/thumbnail/vue-book.gif",
+    "thumbnail": "./images/thumbnail/Vue-book.gif",
     "github": "https://github.com/jungsikjeong/vue-book",
     "date": "2024.01.03 ~ 2024.02.06",
     "contents": [],
-    "images": ["./images/thumbnail/vue-book.gif"],
+    "images": ["./images/thumbnail/Vue-book.gif"],
     "demo": "https://vue-book.vercel.app/",
     "description": "최근에 배운 vue3를 복습겸 웹 사이트를 만들어봤습니다.",
     "whatIDid": [
