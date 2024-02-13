@@ -2,15 +2,15 @@
   "contents": [
     {
       "FrontEnd": [
-        "<span class='point'>TypeScript🎇</span>",
-        "<span class='point'>JavaScript🎇</span>",
-        "<span class='point'>React🎇</span>",
+        "<span class='point'>TypeScript👑</span>",
+        "<span class='point'>JavaScript👑</span>",
+        "<span class='point'>React👑</span>",
         "Vue",
         "Styled-components"
       ],
       "BackEnd": [
-        "<span class='point'>Node.js🎇</span>",
-        "<span class='point'>MongoDB mongoose🎇</span>"
+        "<span class='point'>Node.js👑</span>",
+        "<span class='point'>MongoDB mongoose👑</span>"
       ],
       "Tools": ["Git,Github", "FireBase", "Slack"]
     }

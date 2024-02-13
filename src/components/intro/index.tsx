@@ -49,7 +49,7 @@ const ImageWrap = styled.div`
 const Intro = () => {
   return (
     <Container>
-      <Header>JungSik Jeong</Header>
+      <Header>@JungSik Jeong</Header>
       <Author>
         <Box>
           <SubTitle>안녕하세요 -</SubTitle>
