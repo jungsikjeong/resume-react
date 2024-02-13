@@ -3,6 +3,7 @@ import { PortfolioType } from '../../assets/type/portfolio';
 import { useRef, useState } from 'react';
 import { tagsRandomBgColor } from '../../utils/tagsRandomBgColor';
 import { throttle } from '../../utils/throttle';
+import { useNavigate } from 'react-router-dom';
 
 const Item = styled.div`
   border: 1px solid #eee;
@@ -12,9 +13,17 @@ const Item = styled.div`
   background: white;
   overflow: hidden;
   transition: all 100ms ease-out 0s;
-  cursor: pointer;
+
   &:hover {
     background: #f0f0ef;
+  }
+
+  a {
+    text-decoration: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: ${({ theme }) => theme.colors.break};
   }
 `;
 
@@ -23,6 +32,7 @@ const Image = styled.div`
   height: 194px;
   overflow: hidden;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
   img {
     width: 100%;
     height: 100%;
@@ -39,6 +49,8 @@ const Contents = styled.div`
 
 const Title = styled.div`
   padding: 8px 0px 6px;
+  font-size: 20px;
+  cursor: pointer;
 `;
 
 const Tags = styled.ul`
@@ -64,6 +76,7 @@ const Tag = styled.li<{ bgcolor: string }>`
 
 const Date = styled.div`
   font-size: 12px;
+  padding-bottom: 0.5rem;
 `;
 
 interface PortfolioItemProps {
@@ -74,8 +87,17 @@ const PortfolioItem = ({ item }: PortfolioItemProps) => {
   const scrollRef = useRef<any>(null);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState<number>(0);
-
   const [color, setColor] = useState<string[]>(tagsRandomBgColor(item.tags));
+
+  const navigate = useNavigate();
+
+  const handleDetailPost = ({ item }: PortfolioItemProps) => {
+    navigate(`/project/${item.id}`, {
+      state: {
+        item,
+      },
+    });
+  };
 
   const onDragStart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -106,7 +128,7 @@ const PortfolioItem = ({ item }: PortfolioItemProps) => {
 
   return (
     <Item>
-      <Image>
+      <Image onClick={() => handleDetailPost({ item })}>
         <img
           src={
             item?.thumbnail
@@ -118,7 +140,10 @@ const PortfolioItem = ({ item }: PortfolioItemProps) => {
       </Image>
 
       <Contents>
-        <Title>{item.title}</Title>
+        <Title
+          onClick={() => handleDetailPost({ item })}
+          dangerouslySetInnerHTML={{ __html: item.title }}
+        ></Title>
 
         <Tags
           onMouseDown={onDragStart}

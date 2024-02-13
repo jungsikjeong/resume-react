@@ -6,6 +6,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'BMHANNAProOTF';
+  src: local('BMHANNAProOTF'),
+    url('./assets/fonts/BMHANNAProOTF.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   margin: 0;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Portfolio from '../portfolio/index';
 import portfolio from '../../assets/json/portfolio.json';
+import { useEffect, useState } from 'react';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -61,6 +62,11 @@ interface SectionProps {
 }
 
 const Section = ({ name, title, contents, style }: SectionProps) => {
+  const [portfolioList, setPortfolioList] = useState(portfolio.reverse());
+
+  useEffect(() => {
+    setPortfolioList(portfolio.reverse());
+  }, []);
   return (
     <Wrapper>
       <Title style={{ fontSize: style?.fontSize }}>{title}</Title>
@@ -77,7 +83,7 @@ const Section = ({ name, title, contents, style }: SectionProps) => {
 
       {name === 'skills' && <Skills contents={contents && contents[0]} />}
 
-      {name === 'portfolio' && <Portfolio portfolio={portfolio} />}
+      {name === 'portfolio' && <Portfolio portfolio={portfolioList} />}
     </Wrapper>
   );
 };

@@ -55,7 +55,7 @@ const TopMoveButton = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       // 스크롤 위치가 (전체 문서 높이 - 현재 창의 높이)와 거의 동일하다면 맨 하단에 도달한 것으로 간주
-      if (scrollPosition >= totalHeight - windowHeight - 250) {
+      if (scrollPosition >= totalHeight - windowHeight - 10) {
         setVisible(true);
       } else {
         setVisible(false);
