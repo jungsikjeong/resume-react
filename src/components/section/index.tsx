@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Portfolio from '../portfolio/index';
 import portfolio from '../../assets/json/portfolio.json';
-import { useEffect, useState } from 'react';
+import Activity from '../Activity';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -52,12 +53,20 @@ type ContentsType = {
   Tools: string[];
 };
 
+type ContentsActivityType = {
+  id: number;
+  title: string;
+  year: string;
+  date: string;
+  description: string;
+};
+
 interface SectionProps {
   name?: string;
   title: string;
-  contents?: string[] | ContentsType[];
+  contents: string[] | ContentsType[] | ContentsActivityType[] | any;
   style?: {
-    fontSize: string;
+    fontSize?: string;
   };
 }
 
@@ -72,7 +81,7 @@ const Section = ({ name, title, contents, style }: SectionProps) => {
       <Title style={{ fontSize: style?.fontSize }}>{title}</Title>
 
       <List>
-        {name !== 'skills' &&
+        {name === 'I-am-person' &&
           contents?.map((content: any, index: number) => (
             <Item
               dangerouslySetInnerHTML={{ __html: content }}
@@ -84,6 +93,8 @@ const Section = ({ name, title, contents, style }: SectionProps) => {
       {name === 'skills' && <Skills contents={contents && contents[0]} />}
 
       {name === 'portfolio' && <Portfolio portfolio={portfolioList} />}
+
+      {name === 'activity' && <Activity contents={contents} />}
     </Wrapper>
   );
 };

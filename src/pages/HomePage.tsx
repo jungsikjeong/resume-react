@@ -3,13 +3,14 @@ import author from '../assets/json/author.json';
 import career from '../assets/json/career.json';
 import authorDetails from '../assets/json/authorDetails.json';
 import skills from '../assets/json/skills.json';
+import activity from '../assets/json/activity.json';
 
 import Intro from '../components/intro';
 import Section from '../components/section';
 
 const Container = styled.div`
   position: relative;
-  padding-bottom: 2rem;
+  padding-bottom: 10rem;
 `;
 
 const Box = styled.div`
@@ -27,6 +28,7 @@ const HomePage = () => {
     <Container>
       <Intro />
       <Section
+        name='I-am-person'
         title={'🙆‍♂️ 저는 이런사람이에요!'}
         contents={author?.contents}
         style={{ fontSize: '1.4rem' }}
@@ -46,7 +48,13 @@ const HomePage = () => {
 
       <Section name='skills' title={'💻 Skills'} contents={skills?.contents} />
 
-      <Section name='portfolio' title={'🎨 Portfolio'} />
+      <Section name='portfolio' title={'🎨 Portfolio'} contents={[]} />
+
+      <Section
+        name='activity'
+        title={'🏃‍♀️ Activity'}
+        contents={activity.contents}
+      />
     </Container>
   );
 };
