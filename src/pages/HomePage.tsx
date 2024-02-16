@@ -24,11 +24,11 @@ const Box = styled.div`
 `;
 
 const HomePage = () => {
+  console.log(authorDetails?.contents);
   return (
     <Container>
       <Intro />
       <Section
-        name='I-am-person'
         title={'🙆‍♂️ 저는 이런사람이에요!'}
         contents={author?.contents}
         style={{ fontSize: '1.4rem' }}

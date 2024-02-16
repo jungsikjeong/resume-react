@@ -81,7 +81,8 @@ const Section = ({ name, title, contents, style }: SectionProps) => {
       <Title style={{ fontSize: style?.fontSize }}>{title}</Title>
 
       <List>
-        {name === 'I-am-person' &&
+        {name !== 'skills' &&
+          name !== 'portfolio' &&
           contents?.map((content: any, index: number) => (
             <Item
               dangerouslySetInnerHTML={{ __html: content }}
