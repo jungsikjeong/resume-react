@@ -83,6 +83,7 @@ const Section = ({ name, title, contents, style }: SectionProps) => {
       <List>
         {name !== 'skills' &&
           name !== 'portfolio' &&
+          name !== 'activity' &&
           contents?.map((content: any, index: number) => (
             <Item
               dangerouslySetInnerHTML={{ __html: content }}
