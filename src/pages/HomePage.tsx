@@ -24,7 +24,6 @@ const Box = styled.div`
 `;
 
 const HomePage = () => {
-  console.log(authorDetails?.contents);
   return (
     <Container>
       <Intro />
