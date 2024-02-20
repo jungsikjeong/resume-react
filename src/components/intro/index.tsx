@@ -61,7 +61,15 @@ const Intro = () => {
             <p>📞 010-2272-0693</p>
             <p>📩 wndtlr1024@gmail.com</p>
             <p>
-              😸<a href='https://github.com/jungsikjeong'> Github</a>
+              😸
+              <a
+                href='https://github.com/jungsikjeong'
+                target='_blank'
+                rel='noreferrer'
+              >
+                {' '}
+                Github
+              </a>
             </p>
           </ContentWrapper>
         </Box>
