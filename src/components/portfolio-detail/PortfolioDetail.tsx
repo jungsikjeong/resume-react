@@ -2,8 +2,8 @@ import { PortfolioType } from '../../assets/type/portfolio';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
-import PortfolioHeader from './Portfolio-header';
-import PortfolioImage from './Portfolio-image';
+import PortfolioHeader from './PortfolioHeader';
+import PortfolioImage from './PortfolioImage';
 import DarkModeButton from '../darkModeButton/DarkModeButton';
 
 const Container = styled.div`
