@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import Portfolio from '../portfolio/index';
+import Portfolio from '../portfolio-list/PortfolioList';
 import portfolio from '../../assets/json/portfolio.json';
-import Activity from '../Activity';
+import Activity from '../activity/Activity';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -13,7 +13,7 @@ const Wrapper = styled.section`
 const Title = styled.h3`
   font-weight: 500;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: ${({ theme }) => `1px solid ${theme.colorBorderGray}`};
 `;
 
 const SubTitle = styled.h4`
@@ -25,7 +25,6 @@ const List = styled.ul`
   flex-direction: column;
   gap: 10px;
   padding-left: 1.5rem;
-  color: ${({ theme }) => theme.colors.break};
 
   .point {
     font-weight: 600;
@@ -41,7 +40,7 @@ const SkillsList = styled.ul`
   }
 
   .point {
-    background: #afe4f8;
+    background: ${({ theme }) => theme.colorSkyBlue};
   }
 `;
 

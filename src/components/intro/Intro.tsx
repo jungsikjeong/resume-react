@@ -20,7 +20,7 @@ const SubTitle = styled.h3`
   font-weight: 500;
 
   .point {
-    color: #0b6e99;
+    color: ${({ theme }) => theme.colorBlue};
   }
 `;
 

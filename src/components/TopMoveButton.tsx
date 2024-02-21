@@ -24,10 +24,10 @@ const Wrapper = styled.div<{ visible: boolean }>`
   width: 48px;
   height: 48px;
   border-radius: 100%;
-  background: #fff;
   z-index: 100;
   cursor: pointer;
-  box-shadow: 0 0 4px 4px #d6d6d6;
+  background: #fff;
+  box-shadow: 0 0 3px 2px #d6d6d6;
   color: #37352f;
   font-size: 10px;
   transition: 0.3s ease-out;

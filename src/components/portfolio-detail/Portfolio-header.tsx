@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import FlexBox from '../FlexBox';
+import FlexBox from '../flexBox/FlexBox';
 import { tagsRandomBgColor } from '../../utils/tagsRandomBgColor';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { PortfolioType } from '../../assets/type/portfolio';
 import CustomIcons from '../../assets/svgIcon/list-icon';
+import ThemeContext from '../../context/ThemeContext';
 
 const Header = styled.h1`
   padding-top: 1rem;
@@ -23,7 +24,7 @@ const Title = styled.div``;
 const TopWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #eee;
+  border-bottom: ${({ theme }) => `1px solid ${theme.colorBorderGray}`};
 `;
 
 const Box = styled.div`
@@ -53,8 +54,9 @@ const Tags = styled.ul`
 
 const Tag = styled.li<{ bgcolor: string }>`
   flex-shrink: 0;
-  padding: 0 0.5rem;
+  padding: 0rem 0.5rem;
   background-color: ${({ bgcolor }) => bgcolor};
+  color: rgb(55, 53, 47);
   border-radius: 5px;
 `;
 interface PortfolioHeaderProps {
@@ -62,6 +64,7 @@ interface PortfolioHeaderProps {
 }
 
 const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
+  const context = useContext(ThemeContext);
   const [color, setColor] = useState<string[]>(tagsRandomBgColor(item.tags));
 
   return (
@@ -76,7 +79,14 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
       <TopWrapper>
         <Box>
           <FlexBox gap='10px'>
-            <CustomIcons.ListIcon /> <p>skills</p>
+            <CustomIcons.ListIcon
+              color={
+                context.theme === 'lightTheme'
+                  ? 'rgba(55, 53, 47, 0.45)'
+                  : '#D9D9D9'
+              }
+            />
+            <p>skills</p>
           </FlexBox>
 
           <div className='box-wrap'>
@@ -92,7 +102,14 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
 
         <Box>
           <FlexBox gap='10px'>
-            <CustomIcons.GraphIcon /> <p>Period</p>
+            <CustomIcons.GraphIcon
+              color={
+                context.theme === 'lightTheme'
+                  ? 'rgba(55, 53, 47, 0.45)'
+                  : '#D9D9D9'
+              }
+            />{' '}
+            <p>Period</p>
           </FlexBox>
 
           <div className='box-wrap'>

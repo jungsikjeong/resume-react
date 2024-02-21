@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  /* display: flex;
-  align-items: center; */
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding-top: 1rem;
@@ -12,7 +9,7 @@ const Wrapper = styled.div`
 
 const Year = styled.div`
   @media (max-width: 480px) {
-    border-bottom: 1px solid #eee;
+    border-bottom: ${({ theme }) => `1px solid ${theme.colorBorderGray}`};
   }
 `;
 

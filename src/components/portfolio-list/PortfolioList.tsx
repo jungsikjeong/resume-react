@@ -19,7 +19,7 @@ interface PortfolioProps {
   portfolio: PortfolioType[];
 }
 
-const Portfolio = ({ portfolio }: PortfolioProps) => {
+const PortfolioList = ({ portfolio }: PortfolioProps) => {
   return (
     <Container>
       <List>
@@ -31,4 +31,4 @@ const Portfolio = ({ portfolio }: PortfolioProps) => {
   );
 };
 
-export default Portfolio;
+export default PortfolioList;

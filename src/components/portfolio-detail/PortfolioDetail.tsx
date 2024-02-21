@@ -2,8 +2,9 @@ import { PortfolioType } from '../../assets/type/portfolio';
 import styled from 'styled-components';
 
 import PortfolioHeader from './Portfolio-header';
-import PortfolioImage from './portfolio-image';
+import PortfolioImage from './Portfolio-image';
 import { useEffect } from 'react';
+import DarkModeButton from '../darkModeButton/DarkModeButton';
 
 const Container = styled.div`
   margin-top: 80px;
@@ -45,7 +46,7 @@ const Item = styled.li``;
 const WhatILearned = styled.div``;
 
 const Box = styled.div`
-  background-color: aliceblue;
+  background-color: ${({ theme }) => theme.colorAliceBlue};
   border-radius: 5px;
   padding: 1rem 0;
 `;
@@ -60,6 +61,7 @@ const PortfolioDetail = ({ item }: PortfolioDetailProps) => {
   }, []);
   return (
     <Container>
+      <DarkModeButton />
       <PortfolioHeader item={item} />
 
       <PortfolioImage images={item?.images} />

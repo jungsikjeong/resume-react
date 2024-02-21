@@ -7,15 +7,17 @@ import { useNavigate } from 'react-router-dom';
 
 const Item = styled.div`
   border: 1px solid #eee;
-  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
-    rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  box-shadow: ${({ theme }) => theme.colorShadow};
+  /* box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+    rgba(15, 15, 15, 0.1) 0px 2px 4px; */
   border-radius: 12px;
-  background: white;
+  background: ${({ theme }) => theme.colorBg};
   overflow: hidden;
   transition: all 100ms ease-out 0s;
 
   &:hover {
     background: #f0f0ef;
+    background: ${({ theme }) => theme.colorHover};
   }
 
   a {
@@ -23,7 +25,6 @@ const Item = styled.div`
     border: none;
     margin: 0;
     padding: 0;
-    color: ${({ theme }) => theme.colors.break};
   }
 `;
 
@@ -31,7 +32,8 @@ const Image = styled.div`
   width: 100%;
   height: 194px;
   overflow: hidden;
-  border-bottom: 1px solid #eee;
+  border-bottom: ${({ theme }) => `1px solid ${theme.colorBorderGray}`};
+
   cursor: pointer;
   img {
     width: 100%;
@@ -72,6 +74,7 @@ const Tag = styled.li<{ bgcolor: string }>`
   padding: 0 0.5rem;
   background-color: ${({ bgcolor }) => bgcolor};
   border-radius: 5px;
+  color: rgb(55, 53, 47);
 `;
 
 const Date = styled.div`

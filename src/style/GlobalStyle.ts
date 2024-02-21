@@ -3,12 +3,13 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 a {
   color:${({ theme }) => theme.colors.cloudyGray};
+  
   text-decoration: none;
   padding-bottom: .2rem;
   border-bottom: 1px solid #bbb;
   transition: all .2s linear;
   &:hover{
-    color:${({ theme }) => theme.colors.break};
+    color:${({ theme }) => theme.colorMainFont};
   }
 }
 
@@ -17,12 +18,17 @@ ul{
   margin: 0;
 }
 
+
+
 body {
-  color:${({ theme }) => theme.colors.break};
+  color:${({ theme }) => theme.colorMainFont};
+  background-color:${({ theme }) => theme.colorBg};
+  transition: all 0.25s linear;
+
 }
 
 p{
-  color:#666;
+  color:${({ theme }) => theme.colorDarkGray};
   font-weight: 200;
   margin: 0;
 }
@@ -47,6 +53,8 @@ p{
 
 .tomato {
   color:tomato;
+  color:${({ theme }) => theme.colorRed};
+
 }
 
 .text-bold{

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import author from '../assets/json/author.json';
-import career from '../assets/json/career.json';
-import authorDetails from '../assets/json/authorDetails.json';
-import skills from '../assets/json/skills.json';
-import activity from '../assets/json/activity.json';
+import author from '../../assets/json/author.json';
+import career from '../../assets/json/career.json';
+import authorDetails from '../../assets/json/authorDetails.json';
+import skills from '../../assets/json/skills.json';
+import activity from '../../assets/json/activity.json';
 
-import Intro from '../components/intro';
-import Section from '../components/section';
+import Intro from '../../components/intro/Intro';
+import Section from '../../components/section/Section';
+import DarkModeButton from '../../components/darkModeButton/DarkModeButton';
 
 const Container = styled.div`
   position: relative;
@@ -26,6 +27,7 @@ const Box = styled.div`
 const HomePage = () => {
   return (
     <Container>
+      <DarkModeButton />
       <Intro />
       <Section
         title={'🙆‍♂️ 저는 이런사람이에요!'}
