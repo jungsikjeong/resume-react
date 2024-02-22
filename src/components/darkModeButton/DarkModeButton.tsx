@@ -1,15 +1,17 @@
 import { useContext } from 'react';
-import ThemeContext from '../../context/ThemeContext';
 import styled from 'styled-components';
+import ThemeContext from '../../context/ThemeContext';
+import CustomIcons from '../../assets/svgIcon/list-icon';
 
 const Button = styled.button`
   position: absolute;
   top: -50px;
   right: 0;
-  padding: 5px 20px;
-  /* width: 80px; */
+  width: 32px;
+  height: 32px;
   border: none;
-  border-radius: 10px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
   background-color: ${({ theme }) => theme.colorBg};
   box-shadow: ${({ theme }) => theme.colorShadow};
   cursor: pointer;
@@ -20,9 +22,13 @@ const DarkModeButton = () => {
   return (
     <>
       {context.theme === 'lightTheme' ? (
-        <Button onClick={context.toggleMode}>🌝</Button>
+        <Button onClick={context.toggleMode}>
+          <CustomIcons.LightBtnIcon />
+        </Button>
       ) : (
-        <Button onClick={context.toggleMode}>🌚</Button>
+        <Button onClick={context.toggleMode}>
+          <CustomIcons.DarkBtnIcon color='yellow' />
+        </Button>
       )}
     </>
   );
