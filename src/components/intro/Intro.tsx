@@ -67,7 +67,6 @@ const Intro = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                {' '}
                 Github
               </a>
             </p>
