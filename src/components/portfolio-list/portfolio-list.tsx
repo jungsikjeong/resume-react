@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PortfolioType } from '../../assets/type/portfolio';
-import PortfolioItem from './PortfolioItem';
+import PortfolioItem from './portfolio-item';
 
 const Container = styled.div``;
 

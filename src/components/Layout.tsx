@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import TopMoveButton from './TopMoveButton';
-import ScrollProgressBar from './ScrollProgressBar';
+import ScrollProgressBar from './scroll-progress-bar';
+import TopMoveButton from './top-move-button';
 
 interface LayoutProps {
   children: ReactNode;

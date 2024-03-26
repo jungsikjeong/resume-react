@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 a {
   color:${({ theme }) => theme.colors.cloudyGray};
-  
   text-decoration: none;
   padding-bottom: .2rem;
   border-bottom: 1px solid #bbb;
@@ -18,7 +17,16 @@ ul{
   margin: 0;
 }
 
-
+button{
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
 
 body {
   color:${({ theme }) => theme.colorMainFont};
@@ -60,6 +68,16 @@ p{
 .text-bold{
   font-weight: bold;
 }
+
+.more{
+  color:${({ theme }) => theme.colors.cloudyGray};
+  transition: all .2s linear;
+  cursor: pointer;
+  &:hover{
+    color:${({ theme }) => theme.colorMainFont};
+  }
+}
+
 
 @media only screen and (max-width: 768px) {
   body {

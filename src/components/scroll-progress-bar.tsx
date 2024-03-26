@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const ProgressBar = styled.div<{ visible: boolean }>`
+const ProgressBar = styled.div<{ $visible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@ const ProgressBar = styled.div<{ visible: boolean }>`
   z-index: 100;
   background-color: #2d63ad;
   transition: all 0.2s linear;
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
+  visibility: ${({ $visible }) => ($visible ? 'visible' : 'hidden')};
 `;
 
 const ScrollProgressBar = () => {
@@ -46,7 +46,7 @@ const ScrollProgressBar = () => {
   return (
     <ProgressBar
       style={{ width: `${scrollPercentage}%` }}
-      visible={isScrolling}
+      $visible={isScrolling}
     />
   );
 };

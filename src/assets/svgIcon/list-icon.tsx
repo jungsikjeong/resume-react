@@ -42,10 +42,10 @@ const LightBtnIcon: React.FC<IconProps> = ({
       height={size}
       stroke='currentColor'
       fill='none'
-      stroke-width='2'
+      strokeWidth='2'
       viewBox='0 0 24 24'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeLinecap='round'
+      strokeLinejoin='round'
       xmlns='http://www.w3.org/2000/svg'
     >
       <circle cx='12' cy='12' r='5'></circle>
@@ -69,10 +69,10 @@ const DarkBtnIcon: React.FC<IconProps> = ({
     <svg
       stroke='currentColor'
       fill={color}
-      stroke-width='2'
+      strokeWidth='2'
       viewBox='0 0 24 24'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeLinecap='round'
+      strokeLinejoin='round'
       width={size}
       height={size}
       xmlns='http://www.w3.org/2000/svg'

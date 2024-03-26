@@ -1,10 +1,14 @@
-import styled from 'styled-components';
-import FlexBox from '../flexBox/FlexBox';
-import { tagsRandomBgColor } from '../../utils/tagsRandomBgColor';
 import { useContext, useState } from 'react';
-import { PortfolioType } from '../../assets/type/portfolio';
+import styled from 'styled-components';
 import CustomIcons from '../../assets/svgIcon/list-icon';
-import ThemeContext from '../../context/ThemeContext';
+import { PortfolioType } from '../../assets/type/portfolio';
+import ThemeContext from '../../context/theme-context';
+import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
+import FlexBox from '../flex-box/flex-box';
+
+const Container = styled.div`
+  font-family: 'BMHANNAProOTF';
+`;
 
 const Header = styled.h1`
   padding-top: 1rem;
@@ -68,7 +72,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
   const [color, setColor] = useState<string[]>(tagsRandomBgColor(item.tags));
 
   return (
-    <>
+    <Container>
       <Header>
         <Icon>{item.title.substring(0, 2)}</Icon>
         <Title
@@ -117,7 +121,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
           </div>
         </Box>
       </TopWrapper>
-    </>
+    </Container>
   );
 };
 

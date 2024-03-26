@@ -1,15 +1,14 @@
-import { PortfolioType } from '../../assets/type/portfolio';
 import { useEffect } from 'react';
 import styled from 'styled-components';
+import { PortfolioType } from '../../assets/type/portfolio';
 
-import PortfolioHeader from './PortfolioHeader';
-import PortfolioImage from './PortfolioImage';
-import DarkModeButton from '../darkModeButton/DarkModeButton';
+import DarkModeButton from '../dark-mode-button/dark-mode-button';
+import PortfolioHeader from './portfolio-header';
+import PortfolioImage from './portfolio-image';
 
 const Container = styled.div`
   margin-top: 80px;
   padding-bottom: 10rem;
-  font-family: 'BMHANNAProOTF';
 `;
 
 const SiteWrap = styled.div`
@@ -39,6 +38,9 @@ const List = styled.ul`
   flex-direction: column;
   gap: 10px;
   padding-left: 1.5rem;
+  line-height: 20px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 600;
 `;
 
 const Item = styled.li``;
@@ -46,7 +48,7 @@ const Item = styled.li``;
 const WhatILearned = styled.div``;
 
 const Box = styled.div`
-  background-color: ${({ theme }) => theme.colorAliceBlue};
+  /* background-color: ${({ theme }) => theme.colorAliceBlue}; */
   border-radius: 5px;
   padding: 1rem 0;
 `;

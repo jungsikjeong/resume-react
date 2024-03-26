@@ -1,13 +1,15 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-import author from '../../assets/json/author.json';
-import career from '../../assets/json/career.json';
-import authorDetails from '../../assets/json/authorDetails.json';
-import skills from '../../assets/json/skills.json';
 import activity from '../../assets/json/activity.json';
+import author from '../../assets/json/author.json';
+import authorDetails from '../../assets/json/authorDetails.json';
+import careerModalContents from '../../assets/json/career-modal.json';
+import career from '../../assets/json/career.json';
+import skills from '../../assets/json/skills.json';
 
-import Intro from '../../components/intro/Intro';
-import Section from '../../components/section/Section';
-import DarkModeButton from '../../components/darkModeButton/DarkModeButton';
+import DarkModeButton from '../../components/dark-mode-button/dark-mode-button';
+import Intro from '../../components/intro/intro';
+import Section from '../../components/section';
 
 const Container = styled.div`
   position: relative;
@@ -25,11 +27,14 @@ const Box = styled.div`
 `;
 
 const HomePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Container>
       <DarkModeButton />
       <Intro />
+
       <Section
+        name='someone'
         title={'🙆‍♂️ 저는 이런사람이에요!'}
         contents={author?.contents}
         style={{ fontSize: '1.4rem' }}
@@ -37,11 +42,16 @@ const HomePage = () => {
 
       <Box>
         <Section
+          name='career'
           title={'🎥 전문성 쌓아나가는중..'}
           contents={career?.contents}
+          careerModalContents={careerModalContents}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
         />
 
         <Section
+          name='blog'
           title={'😸 제가 더 궁금하시다면!'}
           contents={authorDetails?.contents}
         />

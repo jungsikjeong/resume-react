@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import ThemeContext from '../../context/ThemeContext';
 import CustomIcons from '../../assets/svgIcon/list-icon';
+import ThemeContext from '../../context/theme-context';
 
 const Button = styled.button`
   position: absolute;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import PortfolioDetail from '../../components/portfolio-detail/PortfolioDetail';
+import PortfolioDetail from '../../components/portfolio-detail';
 
 const PortfolioDetailPage = () => {
   const location = useLocation();

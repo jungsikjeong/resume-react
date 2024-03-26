@@ -12,9 +12,9 @@ const Container = styled.div`
   z-index: 100;
 `;
 
-const Wrapper = styled.div<{ visible: boolean }>`
+const Wrapper = styled.div<{ $visible: boolean }>`
   right: 10px;
-  bottom: ${({ visible }) => (visible ? '16px' : '-60px')};
+  bottom: ${({ $visible }) => ($visible ? '16px' : '-60px')};
   opacity: 1;
   position: absolute;
   display: flex;
@@ -69,7 +69,7 @@ const TopMoveButton = () => {
   }, []);
   return (
     <Container>
-      <Wrapper visible={visible} onClick={onTopMove}>
+      <Wrapper $visible={visible} onClick={onTopMove}>
         <svg
           version='1.1'
           width='12'

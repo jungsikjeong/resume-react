@@ -1,9 +1,9 @@
+import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { PortfolioType } from '../../assets/type/portfolio';
-import { useRef, useState } from 'react';
-import { tagsRandomBgColor } from '../../utils/tagsRandomBgColor';
+import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
 import { throttle } from '../../utils/throttle';
-import { useNavigate } from 'react-router-dom';
 
 const Item = styled.div`
   border: 1px solid #eee;
