@@ -1,16 +1,16 @@
-import { useContext } from 'react';
-import { ThemeProvider } from 'styled-components';
-import Router from './components/Router';
-import ThemeContext from './context/theme-context';
-import GlobalStyle from './style/GlobalStyle';
-import theme from './style/theme';
+import { useContext } from 'react'
+import { ThemeProvider } from 'styled-components'
+import Router from './components/Router'
+import ThemeContext from './context/theme-context'
+import GlobalStyle from './style/globalStyle'
+import theme from './style/theme'
 
-import Layout from './components/layout';
+import Layout from './components/layout'
 
 const App = () => {
-  const context = useContext(ThemeContext);
+  const context = useContext(ThemeContext)
   const themeMode =
-    context.theme === 'lightTheme' ? theme.lightTheme : theme.darkTheme;
+    context.theme === 'lightTheme' ? theme.lightTheme : theme.darkTheme
   return (
     <ThemeProvider theme={themeMode}>
       <Layout>
@@ -18,7 +18,7 @@ const App = () => {
         <Router />
       </Layout>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
