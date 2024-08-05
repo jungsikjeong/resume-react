@@ -1,16 +1,27 @@
-import { useContext } from 'react';
+import { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { ThemeFlag, themeState } from './atoms/theme';
 import Router from './components/Router';
-import ThemeContext from './context/theme-context';
-import GlobalStyle from './style/GlobalStyle';
+import GlobalStyle from './style/global-style';
 import theme from './style/theme';
 
+import { useRecoilState } from 'recoil';
 import Layout from './components/layout';
+import { getThemeFromStorage } from './utils/set-theme-to-storage';
 
 const App = () => {
-  const context = useContext(ThemeContext);
+  const [currentTheme, setCurrentTheme] = useRecoilState(themeState);
+
   const themeMode =
-    context.theme === 'lightTheme' ? theme.lightTheme : theme.darkTheme;
+    currentTheme === ThemeFlag.light ? theme.lightTheme : theme.darkTheme;
+
+  useEffect(() => {
+    const storageTheme = getThemeFromStorage();
+
+    if (storageTheme !== undefined) {
+      setCurrentTheme(storageTheme);
+    }
+  }, []);
   return (
     <ThemeProvider theme={themeMode}>
       <Layout>

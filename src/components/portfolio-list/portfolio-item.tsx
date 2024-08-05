@@ -34,7 +34,7 @@ const Image = styled.div`
   overflow: hidden;
   border-bottom: ${({ theme }) => `1px solid ${theme.colorBorderGray}`};
 
-  cursor: pointer;
+  /* cursor: pointer; */
   img {
     width: 100%;
     height: 100%;
@@ -52,7 +52,7 @@ const Contents = styled.div`
 const Title = styled.div`
   padding: 8px 0px 6px;
   font-size: 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
 `;
 
 const Tags = styled.ul`

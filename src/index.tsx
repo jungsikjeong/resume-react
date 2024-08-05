@@ -1,16 +1,16 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import { ThemeContextProvider } from './context/theme-context';
+import { RecoilRoot } from 'recoil';
 import './index.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <ThemeContextProvider>
+  <RecoilRoot>
     <Router>
       <App />
     </Router>
-  </ThemeContextProvider>
+  </RecoilRoot>
 );

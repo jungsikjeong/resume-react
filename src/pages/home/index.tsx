@@ -7,7 +7,7 @@ import careerModalContents from '../../assets/json/career-modal.json';
 import career from '../../assets/json/career.json';
 import skills from '../../assets/json/skills.json';
 
-import DarkModeButton from '../../components/dark-mode-button/dark-mode-button';
+import DarkModeButton from '../../components/common/theme-switch';
 import Intro from '../../components/intro/intro';
 import Section from '../../components/section';
 

@@ -12,9 +12,10 @@ a {
   }
 }
 
-ul{
-  padding: 0;
+ul, li {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 button{
@@ -67,6 +68,10 @@ p{
 
 .text-bold{
   font-weight: bold;
+}
+
+.fixed{
+  position: fixed;
 }
 
 .more{
