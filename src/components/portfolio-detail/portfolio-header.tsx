@@ -1,8 +1,9 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import CustomIcons from '../../assets/svgIcon/list-icon';
+import CustomIcons from '../../assets/svgIcon/icons';
 import { PortfolioType } from '../../assets/type/portfolio';
-import ThemeContext from '../../context/theme-context';
+import { themeState } from '../../atoms/theme';
 import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
 import FlexBox from '../flex-box/flex-box';
 
@@ -68,7 +69,8 @@ interface PortfolioHeaderProps {
 }
 
 const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
-  const context = useContext(ThemeContext);
+  const theme = useRecoilValue(themeState);
+
   const [color, setColor] = useState<string[]>(tagsRandomBgColor(item.tags));
 
   return (
@@ -84,11 +86,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
         <Box>
           <FlexBox gap='10px'>
             <CustomIcons.ListIcon
-              color={
-                context.theme === 'lightTheme'
-                  ? 'rgba(55, 53, 47, 0.45)'
-                  : '#D9D9D9'
-              }
+              color={theme === 0 ? 'rgba(55, 53, 47, 0.45)' : '#D9D9D9'}
             />
             <p>skills</p>
           </FlexBox>
@@ -107,11 +105,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
         <Box>
           <FlexBox gap='10px'>
             <CustomIcons.GraphIcon
-              color={
-                context.theme === 'lightTheme'
-                  ? 'rgba(55, 53, 47, 0.45)'
-                  : '#D9D9D9'
-              }
+              color={theme === 0 ? 'rgba(55, 53, 47, 0.45)' : '#D9D9D9'}
             />{' '}
             <p>Period</p>
           </FlexBox>

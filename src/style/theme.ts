@@ -11,25 +11,12 @@ const fontSize = {
   //   subTitle: '1.875rem',
 };
 
-const common = {
-  flexCenter: `
-    display: flex;
-    justify-contents: center;
-    align-items: center;
-  `,
-  flexCenterColumn: `
-    display: flex;
-    flex-direction: column;
-    justify-contents: center;
-    align-items: center;
-  `,
-};
-
 const lightTheme: DefaultTheme = {
   colorBorderGray: '#eee',
   colorHover: '#F5F5F5',
   colorMain: '#ffffff4d',
   colorBg: '#F7F7FA',
+  translucentWhite: 'rgba(255, 255, 255, 0.95)',
   colorMainFont: 'rgb(55, 53, 47)',
   colorSkyBlue: '#afe4f8',
   colorAliceBlue: 'aliceblue',
@@ -45,14 +32,15 @@ const lightTheme: DefaultTheme = {
   colorDarkShadow: '0 3px 6px rgba(0, 0, 0, .5)',
   colors: { ...colors },
   fontSize: { ...fontSize },
-  common: { ...common },
 };
 
 const darkTheme: DefaultTheme = {
   colorBorderGray: '#eee',
   colorHover: '#585D6E4d',
   colorMain: '#585D6E4d',
-  colorBg: '#1B1D25',
+  // colorBg: '#1B1D25',
+  colorBg: '#0c1219',
+  translucentWhite: 'rgba(0, 0, 0, 0.5)',
   colorMainFont: '#FAFAFA',
   colorSkyBlue: '#4d91df',
   colorAliceBlue: '#4d91df',
@@ -68,7 +56,6 @@ const darkTheme: DefaultTheme = {
   colorDarkShadow: '0 3px 6px rgba(255, 255, 255, .5)',
   colors: { ...colors },
   fontSize: { ...fontSize },
-  common: { ...common },
 };
 
 const theme = {

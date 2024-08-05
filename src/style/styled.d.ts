@@ -6,6 +6,7 @@ declare module 'styled-components' {
     colorHover: string;
     colorMain: string;
     colorBg: string;
+    translucentWhite: string;
     colorMainFont: string;
     colorSkyBlue: string;
     colorAliceBlue: string;
@@ -22,10 +23,6 @@ declare module 'styled-components' {
     colors: { white: string; cloudyGray: string };
     fontSize: {
       title: string;
-    };
-    common: {
-      flexCenter: string;
-      flexCenterColumn: string;
     };
   }
 }

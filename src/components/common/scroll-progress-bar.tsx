@@ -1,20 +1,28 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
-const ProgressBar = styled.div<{ $visible: boolean }>`
+const ProgressBar = styled(motion.div)<{ $visible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   height: 2px;
+  background: #2d63ad;
+  transform-origin: 0%;
   z-index: 100;
-  background-color: #2d63ad;
-  transition: all 0.2s linear;
   visibility: ${({ $visible }) => ($visible ? 'visible' : 'hidden')};
 `;
 
 const ScrollProgressBar = () => {
-  const [scrollPercentage, setScrollPercentage] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     let scrollTimeout: any;
@@ -22,14 +30,9 @@ const ScrollProgressBar = () => {
     const handleScroll = () => {
       setIsScrolling(true);
 
-      const scrollableHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrolledPercentage = (window.scrollY / scrollableHeight) * 100;
-
-      setScrollPercentage(scrolledPercentage);
-
       // 새로운 타임아웃을 설정하고, 기존 타임아웃을 취소
       clearTimeout(scrollTimeout);
+
       scrollTimeout = setTimeout(() => {
         setIsScrolling(false);
       }, 1000);
@@ -43,12 +46,7 @@ const ScrollProgressBar = () => {
     };
   }, []);
 
-  return (
-    <ProgressBar
-      style={{ width: `${scrollPercentage}%` }}
-      $visible={isScrolling}
-    />
-  );
+  return <ProgressBar $visible={isScrolling} style={{ scaleX }} />;
 };
 
 export default ScrollProgressBar;
