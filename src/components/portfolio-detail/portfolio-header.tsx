@@ -57,10 +57,10 @@ const Tags = styled.ul`
   gap: 5px;
 `;
 
-const Tag = styled.li<{ bgcolor: string }>`
+const Tag = styled.li<{ $bgcolor: string }>`
   flex-shrink: 0;
   padding: 0rem 0.5rem;
-  background-color: ${({ bgcolor }) => bgcolor};
+  background-color: ${({ $bgcolor }) => $bgcolor};
   color: rgb(55, 53, 47);
   border-radius: 5px;
 `;
@@ -94,7 +94,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
           <div className='box-wrap'>
             <Tags>
               {item.tags.map((tag, index) => (
-                <Tag bgcolor={color[index]} key={index}>
+                <Tag $bgcolor={color[index]} key={index}>
                   {tag}
                 </Tag>
               ))}

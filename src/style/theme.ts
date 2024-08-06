@@ -2,7 +2,9 @@ import { DefaultTheme } from 'styled-components';
 
 const colors = {
   white: '#FFFFFF',
+  black: '#000',
   cloudyGray: '#B8B7B5',
+
   // cloudyGray: '#D9D9D9',
 };
 
@@ -26,6 +28,7 @@ const lightTheme: DefaultTheme = {
   colorCloudyGray: '#B8B7B5',
   colorDarkGray: '#666',
   colorWhite: '#FFFFFF',
+  colorBlack: '#121212',
   colorRed: 'tomato',
   colorDiRed: '#FE9090',
   colorShadow: '0 3px 6px rgba(0, 0, 0, .16)',
@@ -49,10 +52,11 @@ const darkTheme: DefaultTheme = {
   colorGray: '#D9D9D9',
   colorCloudyGray: '#B8B7B5',
   colorDarkGray: '#D9D9D9',
-  colorWhite: '#FFFFFF',
+  colorWhite: '#282C34',
+  colorBlack: '#FAFAFA',
   colorRed: '#FC585A',
   colorDiRed: '#FE9090',
-  colorShadow: '0 4px 7px rgb(68 68 68 / .8)',
+  colorShadow: '0 4px 7px rgb(68 68 68 / 0.8)',
   colorDarkShadow: '0 3px 6px rgba(255, 255, 255, .5)',
   colors: { ...colors },
   fontSize: { ...fontSize },

@@ -12,12 +12,12 @@ const Container = styled.header`
   height: 130px;
 `;
 
-const Wrapper = styled.div<{ isscrolled: string }>`
+const Wrapper = styled.div<{ $isscrolled: string }>`
   display: flex;
   position: absolute;
   top: 50px;
   left: 50%;
-  visibility: ${({ isscrolled }) => (isscrolled ? 'hidden' : 'visible')};
+  visibility: ${({ $isscrolled }) => ($isscrolled ? 'hidden' : 'visible')};
   transform: translateX(-50%);
 `;
 
@@ -34,6 +34,7 @@ const Logo = styled.img`
   position: fixed;
   top: 20px;
   left: 50px;
+  z-index: 200;
 
   @media (max-width: 1024px) {
     width: 90px;
@@ -43,6 +44,7 @@ const Logo = styled.img`
   @media (max-width: 767px) {
     width: 60px;
     height: 60px;
+    left: 20px;
   }
 `;
 
@@ -53,17 +55,16 @@ const Header = () => {
     <Container>
       <Logo src='/images/logo.jpeg' />
 
-      <Wrapper isscrolled={isScrolled ? 'true' : ''}>
+      <Wrapper $isscrolled={isScrolled ? 'true' : ''}>
         WE
         <IconWrap
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
+          animate={
+            isScrolled ? { scale: 1 } : { scale: [1, 1, 1.4, 1.2, 1.4, 1, 1] }
+          }
           transition={{
-            duration: 0.5,
-            ease: 'easeInOut',
+            duration: 2,
+            ease: 'linear',
             repeat: Infinity,
-            repeatType: 'mirror',
           }}
         >
           <CustomIcons.HeartIcon />

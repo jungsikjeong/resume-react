@@ -16,11 +16,12 @@ declare module 'styled-components' {
     colorCloudyGray: string;
     colorDarkGray: string;
     colorWhite: string;
+    colorBlack: string;
     colorRed: string;
     colorDiRed: string;
     colorShadow: string;
     colorDarkShadow: string;
-    colors: { white: string; cloudyGray: string };
+    colors: { white: string; black: string; cloudyGray: string };
     fontSize: {
       title: string;
     };
