@@ -54,3 +54,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

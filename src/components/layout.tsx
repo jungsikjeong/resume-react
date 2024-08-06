@@ -13,9 +13,8 @@ interface LayoutProps {
 
 const Container = styled.div`
   position: relative;
-  max-width: 900px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
 `;
 
 const Overlay = styled.div`

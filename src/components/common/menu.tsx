@@ -17,7 +17,7 @@ const MenuText = styled(motion.div)`
   top: 50px;
   right: 50px;
   z-index: 500;
-
+  cursor: url('/images/cursor-pointer-hover.png'), auto;
   @media (max-width: 767px) {
     right: 20px;
   }

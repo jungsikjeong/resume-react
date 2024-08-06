@@ -69,10 +69,10 @@ const Tags = styled.ul`
   }
 `;
 
-const Tag = styled.li<{ bgcolor: string }>`
+const Tag = styled.li<{ $bgcolor: string }>`
   flex-shrink: 0;
   padding: 0 0.5rem;
-  background-color: ${({ bgcolor }) => bgcolor};
+  background-color: ${({ $bgcolor }) => $bgcolor};
   border-radius: 5px;
   color: rgb(55, 53, 47);
 `;
@@ -156,7 +156,7 @@ const PortfolioItem = ({ item }: PortfolioItemProps) => {
           ref={scrollRef}
         >
           {item.tags.map((tag, index) => (
-            <Tag bgcolor={color[index]} key={tag}>
+            <Tag $bgcolor={color[index]} key={tag}>
               {tag}
             </Tag>
           ))}
