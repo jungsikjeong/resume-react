@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import CustomIcons from '../../assets/svgIcon/icons';
@@ -49,11 +51,25 @@ const Logo = styled.img`
 `;
 
 const Header = () => {
+  const [title, setTitle] = useState('web');
   const isScrolled = useScrollPosition();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const pathSegments =
+      location.pathname === '/'
+        ? 'WEB'
+        : location.pathname.split('/').join('').toUpperCase();
+
+    setTitle(pathSegments);
+  }, [location.pathname]);
 
   return (
     <Container>
-      <Logo src='/images/logo.jpeg' />
+      <Link to='/'>
+        <Logo src='/images/logo.jpeg' />
+      </Link>
 
       <Wrapper $isscrolled={isScrolled ? 'true' : ''}>
         WE
@@ -69,7 +85,7 @@ const Header = () => {
         >
           <CustomIcons.HeartIcon />
         </IconWrap>
-        WEB
+        {title}
       </Wrapper>
       <Menu />
     </Container>

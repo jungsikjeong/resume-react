@@ -5,20 +5,16 @@ import { ThemeFlag, themeState } from '../../atoms/theme';
 import { setThemeToStorage } from '../../utils/set-theme-to-storage';
 
 const Button = styled.button`
-  position: absolute;
-  top: -50px;
-  right: 0;
   width: 32px;
   height: 32px;
   border: none;
   border-radius: 50%;
   border: 1px solid #e0e0e0;
   background-color: ${({ theme }) => theme.colorBg};
-  box-shadow: ${({ theme }) => theme.colorShadow};
   cursor: url('/images/cursor-pointer-hover.png'), auto;
 `;
 
-const ThemeSwitch = () => {
+const ThemeSwitchBtn = () => {
   const [theme, setTheme] = useRecoilState(themeState);
 
   const handleClick = () => {
@@ -45,4 +41,4 @@ const ThemeSwitch = () => {
   );
 };
 
-export default ThemeSwitch;
+export default ThemeSwitchBtn;

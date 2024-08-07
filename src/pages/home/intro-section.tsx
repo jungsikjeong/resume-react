@@ -32,7 +32,6 @@ const ContentsWrap = styled.div<{ order: number }>`
 
 const ImageWrap = styled.div<{ order: number }>`
   margin-top: 80px;
-  display: flex;
   flex: 0 0 58.3333333333%;
   left: ${({ order }) => (order === 0 ? 'auto' : '8.3333333333%')};
   right: ${({ order }) => (order === 0 ? '8.3333333333%' : 'auto')};
@@ -103,6 +102,10 @@ const Image = styled.img`
   &.in-view {
     opacity: 1;
   }
+
+  @media (max-width: 767px) {
+    border-radius: 0px;
+  }
 `;
 
 interface IIntroSectionProps {
@@ -141,9 +144,7 @@ const IntroSection = ({ title, contents, url, order }: IIntroSectionProps) => {
       </ContentsWrap>
 
       <ImageWrap order={order}>
-        <div>
-          <Image ref={imageRef} src={url} alt='' />
-        </div>
+        <Image ref={imageRef} src={url} alt='' />
       </ImageWrap>
     </Container>
   );
