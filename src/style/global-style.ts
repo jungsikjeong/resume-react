@@ -5,7 +5,6 @@ a {
   color:${({ theme }) => theme.colors.cloudyGray};
   text-decoration: none;
   padding-bottom: .2rem;
-  border-bottom: 1px solid #bbb;
   transition: all .2s linear;
   &:hover{
     color:${({ theme }) => theme.colorMainFont};
@@ -95,6 +94,8 @@ p{
         
       }
   }
+
+
 `;
 
 export default GlobalStyle;

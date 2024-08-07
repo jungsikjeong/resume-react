@@ -1,6 +1,5 @@
 import { styled } from 'styled-components';
 import StyledButton from '../../components/common/styled-button';
-import ThemeSwitchBtn from '../../components/common/theme-switch';
 
 const Container = styled.div`
   position: relative;
@@ -32,6 +31,11 @@ const Item = styled.li`
   width: 100%;
   height: 100%;
   padding-inline: 16px;
+  transition: all 0.2s linear;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const Image = styled.img`
@@ -52,16 +56,16 @@ const BtnWrap = styled.div`
 const Blog = () => {
   return (
     <Container>
-      <ThemeSwitchBtn />
-
-      <h1>브랜드 살펴보기</h1>
+      <h1>블로그 살펴보기</h1>
 
       <List>
         <Item>
-          <Image
-            src='https://www.coca-cola.com/content/dam/onexp/kr/ko/home-images/brands/fanta/artwork-images/10-23-23/logo_07_Fanta.png/width1960.png'
-            alt=''
-          />
+          <a href='/'>
+            <Image
+              src='https://www.coca-cola.com/content/dam/onexp/kr/ko/home-images/brands/fanta/artwork-images/10-23-23/logo_07_Fanta.png/width1960.png'
+              alt=''
+            />
+          </a>
         </Item>
         <Item>
           <Image
@@ -96,7 +100,13 @@ const Blog = () => {
       </List>
 
       <BtnWrap>
-        <StyledButton>모두 보기</StyledButton>
+        <a
+          href='https://wjdwndtlr10241024.tistory.com/'
+          target={'_blank'}
+          rel='noreferrer'
+        >
+          <StyledButton>더 보기</StyledButton>
+        </a>
       </BtnWrap>
     </Container>
   );

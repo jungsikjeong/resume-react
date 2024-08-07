@@ -6,6 +6,7 @@ import { menuState } from '../atoms/menu';
 import Header from './common/header';
 import ScrollProgressBar from './common/scroll-progress-bar';
 import TopMoveButton from './top-move-button';
+import Footer from './common/footer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -39,6 +40,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Container>
         {children}
         <TopMoveButton />
+        <Footer />
       </Container>
     </>
   );

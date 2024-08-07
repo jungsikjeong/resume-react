@@ -151,7 +151,7 @@ const Carousel = () => {
       <SwiperSlide>
         <ImageWrap>
           <Image
-            src='https://file.notion.so/f/f/f58dd584-7b46-47a4-a941-868db894802c/f5c8e6e6-28b7-4b14-a4b3-a9a0b346ae4d/React_App_-_Chrome_2024-05-19_%EC%98%A4%ED%9B%84_5_34_25.png?table=block&id=f1e61815-4261-4e3c-8bc7-97822ce9da70&spaceId=f58dd584-7b46-47a4-a941-868db894802c&expirationTimestamp=1722974400000&signature=FZ6y8fRgK1MDy2yr6VA0eBrGE5S-nQ4xqiC7Y-yJTiA&downloadName=React+App+-+Chrome+2024-05-19+%EC%98%A4%ED%9B%84+5_34_25.png'
+            src='http://localhost:3000/images/portfolio/gongcha1.png'
             alt='preview-img'
           />
 

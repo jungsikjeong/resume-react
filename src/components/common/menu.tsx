@@ -7,11 +7,12 @@ import { styled } from 'styled-components';
 import { menuState } from '../../atoms/menu';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
+import ThemeSwitchBtn from '../common/theme-switch-btn';
+
 const MenuWrap = styled.div`
   font-family: 'NotoSansKR', sans-serif;
   font-size: 14px;
 `;
-
 const MenuText = styled(motion.div)`
   position: fixed;
   top: 50px;
@@ -144,6 +145,7 @@ const Menu = () => {
             <SLink
               to='/project'
               pathname={location.pathname === '/project' ? 'true' : ''}
+              onClick={() => setOpen(false)}
             >
               {location.pathname === '/project' && <FaArrowRightLong />}
               <span className='text'>
@@ -155,6 +157,7 @@ const Menu = () => {
             <SLink
               to='/profile'
               pathname={location.pathname === '/profile' ? 'true' : ''}
+              onClick={() => setOpen(false)}
             >
               {location.pathname === '/profile' && <FaArrowRightLong />}
               <span className='text'>연락처 및 프로필</span>
@@ -177,6 +180,7 @@ const Menu = () => {
             >
               <SiBloglovin />
             </SLink>
+            <ThemeSwitchBtn />
           </IconWrap>
         </List>
       </AnimatePresence>

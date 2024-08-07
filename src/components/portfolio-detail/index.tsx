@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { PortfolioType } from '../../assets/type/portfolio';
 
-import DarkModeButton from '../common/theme-switch';
+import DarkModeButton from '../common/theme-switch-btn';
 import PortfolioHeader from './portfolio-header';
 import PortfolioImage from './portfolio-image';
 
