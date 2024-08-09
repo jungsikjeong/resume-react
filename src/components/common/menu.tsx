@@ -8,18 +8,26 @@ import { menuState } from '../../atoms/menu';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
 import ThemeSwitchBtn from '../common/theme-switch-btn';
+import useScrollPosition from '../../hook/use-scroll-position';
 
 const MenuWrap = styled.div`
   font-family: 'NotoSansKR', sans-serif;
   font-size: 14px;
 `;
-const MenuText = styled(motion.div)`
+const MenuText = styled(motion.div)<{ $isscrolled: boolean }>`
   position: fixed;
   top: 50px;
   right: 50px;
   z-index: 500;
   cursor: url('/images/cursor-pointer-hover.png'), auto;
+  transition: all 0.2s ease;
+
+  @media (max-width: 1460px) {
+    top: ${({ $isscrolled }) => ($isscrolled ? '25px' : '50px')};
+  }
+
   @media (max-width: 767px) {
+    top: 20px;
     right: 20px;
   }
 `;
@@ -37,8 +45,6 @@ const List = styled(motion.ul)`
   @media (max-width: 767px) {
     width: 100%;
     padding: 10rem 0 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    background-color: ${({ theme }) => theme.translucentWhite};
   }
 `;
 
@@ -56,6 +62,10 @@ const IconWrap = styled.div`
   bottom: 20rem;
   display: flex;
   gap: 10px;
+
+  @media (max-width: 767px) {
+    bottom: 2rem;
+  }
 `;
 
 const SLink = styled(Link)<{ pathname?: string }>`
@@ -101,10 +111,13 @@ const Menu = () => {
   const [open, setOpen] = useRecoilState(menuState);
   const location = useLocation();
 
+  const isScrolled = useScrollPosition();
+
   return (
     <MenuWrap>
       {!open ? (
         <MenuText
+          $isscrolled={isScrolled}
           transition={{
             scale: { type: 'spring', stiffness: 400, damping: 17 },
           }}
@@ -117,6 +130,7 @@ const Menu = () => {
       ) : (
         <AnimatePresence>
           <MenuText
+            $isscrolled={isScrolled}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -160,7 +174,7 @@ const Menu = () => {
               onClick={() => setOpen(false)}
             >
               {location.pathname === '/profile' && <FaArrowRightLong />}
-              <span className='text'>연락처 및 프로필</span>
+              <span className='text'>프로필 및 연락처</span>
             </SLink>
           </Item>
 

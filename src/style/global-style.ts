@@ -41,6 +41,14 @@ p{
   margin: 0;
 }
 
+input{
+  background-color: transparent;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
 .nesting-ul{
   display: flex;
   flex-direction:column;

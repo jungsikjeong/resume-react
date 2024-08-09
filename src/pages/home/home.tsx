@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Carousel from '../../components/carousel/carousel';
 import Footer from '../../components/common/footer';
 import ThemeSwitchBtn from '../../components/common/theme-switch-btn';
-import GuideImage from '../../components/guide-image';
+import LadderImage from '../../components/ladder-image';
 import Blog from './blog';
 import IntroSection from './intro-section';
 
@@ -66,7 +66,7 @@ const HomePage = () => {
         </Box>
         <Section name='skills' title={'💻 Skills'} contents={skills?.contents} />
         <Section name='portfolio' title={'🎨 Portfolio'} contents={[]} /> */}
-      <GuideImage />
+      <LadderImage />
     </Container>
   );
 };
