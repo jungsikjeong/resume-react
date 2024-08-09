@@ -50,8 +50,13 @@ const BtnWrap = styled.div`
 
 const Button = styled(StyledButton)``;
 
+const ErrorMessage = styled.div`
+  font-size: 15px;
+`;
+
 const EamilForm = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleContact = (event: any) => {
     event.preventDefault();
@@ -65,16 +70,30 @@ const EamilForm = () => {
 
     fetch(scriptURL as string, { method: 'POST', body: new FormData(form) })
       .then((response) => {
-        console.log('Success!', response);
         form.reset(); // 보내는 값이 성공값이면, form data reset
         setLoading(false);
+        setError(false);
         toast('이메일 전송이 완료되었습니다!');
       })
       .catch((error) => {
         console.error('Error!', error.message);
+        setError(true);
         setLoading(false);
       });
   };
+
+  if (error) {
+    return (
+      <ErrorMessage>
+        잠깐 문제가 생겼어요! 메일이 발송되지 않았습니다.
+        <br /> 계속 실패하면 아래 이메일 주소로 직접 연락부탁드립니다!
+        <br />
+        <br />
+        <strong>wndtlr1024@gmail.com</strong>
+      </ErrorMessage>
+    );
+  }
+
   return (
     <Container>
       <h1>Contact me</h1>
