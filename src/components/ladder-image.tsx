@@ -24,7 +24,7 @@ const Image = styled.img`
   cursor: url('/images/cursor-pointer-hover.png'), auto;
 `;
 
-const GuideImage = () => {
+const LadderImage = () => {
   const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
@@ -41,11 +41,11 @@ const GuideImage = () => {
     <>
       {showImage && (
         <ImageWrap>
-          <Image src='/test.gif' alt='' style={{ width: '200px' }} />
+          <Image src='/images/ladder.gif' alt='' style={{ width: '200px' }} />
         </ImageWrap>
       )}
     </>
   );
 };
 
-export default GuideImage;
+export default LadderImage;

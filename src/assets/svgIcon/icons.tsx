@@ -87,7 +87,7 @@ const DarkBtnIcon: React.FC<IconProps> = ({
 const HeartIcon: React.FC<IconProps> = ({
   width = '19px',
   height = '16.5px',
-  color = '#184CEF',
+  color = 'tomato',
 }) => {
   return (
     <i data-svg='https://studio-jt.co.kr/wp-content/themes/studio_jt/images/icon/icon-blue-heart.svg'>

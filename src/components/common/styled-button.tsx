@@ -15,10 +15,19 @@ const SButton = styled.button`
 `;
 
 interface IButtonProps {
+  type?: 'button' | 'submit' | 'reset';
   children: React.ReactNode;
 }
-const StyledButton = ({ children, ...props }: IButtonProps) => {
-  return <SButton>{children}</SButton>;
+const StyledButton = ({
+  children,
+  type = 'button',
+  ...props
+}: IButtonProps) => {
+  return (
+    <SButton type={type} {...props}>
+      {children}
+    </SButton>
+  );
 };
 
 export default StyledButton;
