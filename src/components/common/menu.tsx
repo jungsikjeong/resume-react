@@ -157,11 +157,11 @@ const Menu = () => {
         >
           <Item>
             <SLink
-              to='/project'
-              pathname={location.pathname === '/project' ? 'true' : ''}
+              to='/projects'
+              pathname={location.pathname === '/projects' ? 'true' : ''}
               onClick={() => setOpen(false)}
             >
-              {location.pathname === '/project' && <FaArrowRightLong />}
+              {location.pathname === '/projects' && <FaArrowRightLong />}
               <span className='text'>
                 프로젝트 <Count>32</Count>
               </span>

@@ -65,8 +65,8 @@ const Logo = styled.img<{ $isscrolled: boolean }>`
   }
 
   @media (max-width: 1024px) {
-    width: 90px;
-    height: 90px;
+    width: ${({ $isscrolled }) => ($isscrolled ? '50px' : '90px')};
+    height: ${({ $isscrolled }) => ($isscrolled ? '50px' : '90px')};
   }
 
   @media (max-width: 767px) {

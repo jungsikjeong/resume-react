@@ -9,7 +9,13 @@ const Container = styled.div``;
 const TopWrap = styled.div`
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 1rem;
+  }
 `;
 
 const TextWrap = styled.div`
@@ -19,11 +25,25 @@ const TextWrap = styled.div`
     font-size: 60px;
     line-height: 1.75;
     font-weight: 300;
+    @media (max-width: 767px) {
+      font-size: 24px;
+      line-height: 1.2;
+    }
   }
 
   p {
     line-height: 2.15;
     font-weight: 600;
+    @media (max-width: 767px) {
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: -1.2px;
+    }
   }
 `;
 
@@ -31,6 +51,9 @@ const ImageWrap = styled.div`
   max-width: 500px;
   width: 100%;
   height: 350px;
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
 `;
 
 const Image = styled.img`
@@ -38,6 +61,10 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const BottomWrap = styled.div`
@@ -108,7 +135,6 @@ const Profile = () => {
             </BtnWrap>
           </>
         )}
-
         <AnimatePresence>
           {isContact && (
             <EmailMotionWrap
