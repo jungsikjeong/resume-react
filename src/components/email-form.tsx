@@ -9,6 +9,7 @@ import FlexBox from './flex-box/flex-box';
 const Container = styled.div`
   max-width: 550px;
   width: 100%;
+  padding: 1rem;
 `;
 
 const IconWrap = styled(motion.div)`
@@ -117,7 +118,7 @@ const EamilForm = () => {
           onSubmit={handleContact}
           autoComplete='off'
         >
-          <Input name='name' placeholder='성함' required />
+          <Input name='name' placeholder='보내시는분 성함' required />
           <Input
             name='email'
             placeholder='연락 받으실 이메일을 입력해주세요'

@@ -10,6 +10,13 @@ import IntroSection from './intro-section';
 
 const Container = styled.div`
   position: relative;
+
+  /* @media (max-width: 1460px) {
+    padding-top: 10rem;
+  }
+  @media (max-width: 767px) {
+    padding-top: 5rem;
+  } */
 `;
 
 const Box = styled.div`
