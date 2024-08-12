@@ -2,8 +2,6 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import Carousel from '../../components/carousel/carousel';
-import Footer from '../../components/common/footer';
-import ThemeSwitchBtn from '../../components/common/theme-switch-btn';
 import LadderImage from '../../components/ladder-image';
 import Blog from './blog';
 import IntroSection from './intro-section';

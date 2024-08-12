@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { menuState } from '../atoms/menu';
@@ -42,6 +42,13 @@ const Layout = ({ children }: LayoutProps) => {
   const [isMenu, setMenuClose] = useRecoilState(menuState);
 
   const location = useLocation();
+  console.log(location.pathname);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [location.pathname]);
 
   return (
     <>
