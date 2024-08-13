@@ -1,8 +1,10 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import CustomIcons from '../../assets/svgIcon/list-icon';
-import { PortfolioType } from '../../assets/type/portfolio';
-import ThemeContext from '../../context/theme-context';
+import CustomIcons from '../../assets/svgIcon/icons';
+import { IProjectList } from '../../interface/project-list';
+
+import { themeState } from '../../atoms/theme';
 import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
 import FlexBox from '../flex-box/flex-box';
 
@@ -56,19 +58,20 @@ const Tags = styled.ul`
   gap: 5px;
 `;
 
-const Tag = styled.li<{ bgcolor: string }>`
+const Tag = styled.li<{ $bgcolor: string }>`
   flex-shrink: 0;
   padding: 0rem 0.5rem;
-  background-color: ${({ bgcolor }) => bgcolor};
+  background-color: ${({ $bgcolor }) => $bgcolor};
   color: rgb(55, 53, 47);
   border-radius: 5px;
 `;
 interface PortfolioHeaderProps {
-  item: PortfolioType;
+  item: IProjectList;
 }
 
 const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
-  const context = useContext(ThemeContext);
+  const theme = useRecoilValue(themeState);
+
   const [color, setColor] = useState<string[]>(tagsRandomBgColor(item.tags));
 
   return (
@@ -84,11 +87,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
         <Box>
           <FlexBox gap='10px'>
             <CustomIcons.ListIcon
-              color={
-                context.theme === 'lightTheme'
-                  ? 'rgba(55, 53, 47, 0.45)'
-                  : '#D9D9D9'
-              }
+              color={theme === 0 ? 'rgba(55, 53, 47, 0.45)' : '#D9D9D9'}
             />
             <p>skills</p>
           </FlexBox>
@@ -96,7 +95,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
           <div className='box-wrap'>
             <Tags>
               {item.tags.map((tag, index) => (
-                <Tag bgcolor={color[index]} key={index}>
+                <Tag $bgcolor={color[index]} key={index}>
                   {tag}
                 </Tag>
               ))}
@@ -107,11 +106,7 @@ const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {
         <Box>
           <FlexBox gap='10px'>
             <CustomIcons.GraphIcon
-              color={
-                context.theme === 'lightTheme'
-                  ? 'rgba(55, 53, 47, 0.45)'
-                  : '#D9D9D9'
-              }
+              color={theme === 0 ? 'rgba(55, 53, 47, 0.45)' : '#D9D9D9'}
             />{' '}
             <p>Period</p>
           </FlexBox>

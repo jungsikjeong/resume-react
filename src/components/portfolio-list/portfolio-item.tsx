@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { PortfolioType } from '../../assets/type/portfolio';
+import { IProjectList } from '../../interface/project-list';
 import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
 import { throttle } from '../../utils/throttle';
 
@@ -34,7 +34,7 @@ const Image = styled.div`
   overflow: hidden;
   border-bottom: ${({ theme }) => `1px solid ${theme.colorBorderGray}`};
 
-  cursor: pointer;
+  /* cursor: pointer; */
   img {
     width: 100%;
     height: 100%;
@@ -52,7 +52,7 @@ const Contents = styled.div`
 const Title = styled.div`
   padding: 8px 0px 6px;
   font-size: 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
 `;
 
 const Tags = styled.ul`
@@ -69,10 +69,10 @@ const Tags = styled.ul`
   }
 `;
 
-const Tag = styled.li<{ bgcolor: string }>`
+const Tag = styled.li<{ $bgcolor: string }>`
   flex-shrink: 0;
   padding: 0 0.5rem;
-  background-color: ${({ bgcolor }) => bgcolor};
+  background-color: ${({ $bgcolor }) => $bgcolor};
   border-radius: 5px;
   color: rgb(55, 53, 47);
 `;
@@ -83,7 +83,7 @@ const Date = styled.div`
 `;
 
 interface PortfolioItemProps {
-  item: PortfolioType;
+  item: IProjectList;
 }
 
 const PortfolioItem = ({ item }: PortfolioItemProps) => {
@@ -156,7 +156,7 @@ const PortfolioItem = ({ item }: PortfolioItemProps) => {
           ref={scrollRef}
         >
           {item.tags.map((tag, index) => (
-            <Tag bgcolor={color[index]} key={tag}>
+            <Tag $bgcolor={color[index]} key={tag}>
               {tag}
             </Tag>
           ))}

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PortfolioType } from '../../assets/type/portfolio';
+import { IProjectList } from '../../interface/project-list';
 import PortfolioItem from './portfolio-item';
 
 const Container = styled.div``;
@@ -16,7 +16,7 @@ const List = styled.div`
 `;
 
 interface PortfolioProps {
-  portfolio: PortfolioType[];
+  portfolio: IProjectList[];
 }
 
 const PortfolioList = ({ portfolio }: PortfolioProps) => {

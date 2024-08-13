@@ -4,6 +4,8 @@ interface IconProps {
   fill?: string;
   stroke?: string;
   strokeWidth?: string;
+  width?: string;
+  height?: string;
 }
 
 const ListIcon: React.FC<IconProps> = ({
@@ -82,11 +84,45 @@ const DarkBtnIcon: React.FC<IconProps> = ({
   );
 };
 
+const HeartIcon: React.FC<IconProps> = ({
+  width = '19px',
+  height = '16.5px',
+  color = 'tomato',
+}) => {
+  return (
+    <i data-svg='https://studio-jt.co.kr/wp-content/themes/studio_jt/images/icon/icon-blue-heart.svg'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        xmlnsXlink='http://www.w3.org/1999/xlink'
+        version='1.1'
+        x='0px'
+        y='0px'
+        width={width}
+        height={height}
+        viewBox='0 0 19 16.5'
+        enableBackground='new 0 0 19 16.5'
+        xmlSpace='preserve'
+      >
+        <title> LOVE </title>
+        <path
+          fill={color}
+          d='M15.7,3.3c-0.6-0.6-1.3-1-2.1-1c-1.2,0-2.2,0.6-2.8,1.7c-0.2,0.5-0.7,0.8-1.2,0.7c-0.5,0-1-0.3-1.2-0.8  C7.8,2.8,6.8,2.1,5.6,2.1c0,0-0.1,0-0.1,0C4,2.1,2.6,3.4,2.5,5l0,0.3c-0.1,1-0.1,6.3,6.5,8.6c0.2,0.1,0.4,0.1,0.6,0  c6.9-1.9,6.9-8,6.9-8.3v0C16.5,4.7,16.2,3.9,15.7,3.3z'
+        ></path>
+        <path
+          fill='#020202'
+          d='M17.1,1.9c-0.9-1-2.2-1.6-3.5-1.6c-1.5,0-3,0.7-4,1.9C8.7,0.8,7.3,0,5.7,0C3-0.1,0.7,2.1,0.5,5l0,0.2  C0.5,6,0.2,13.1,8.4,15.8C8.7,15.9,9,16,9.3,16c0.3,0,0.5,0,0.8-0.1c8.1-2.2,8.4-9.6,8.4-10.3C18.5,4.2,18,2.9,17.1,1.9z M9,13.9  c-6.6-2.3-6.6-7.5-6.5-8.6l0-0.3c0.1-1.7,1.4-3,3.1-3c0,0,0.1,0,0.1,0c1.2,0,2.2,0.7,2.7,1.8C8.6,4.4,9,4.7,9.5,4.7  c0.5,0,1-0.3,1.2-0.7c0.6-1.1,1.6-1.7,2.8-1.7c0.8,0,1.6,0.4,2.1,1s0.9,1.4,0.8,2.3v0c0,0.3,0,6.4-6.9,8.3C9.4,14,9.2,13.9,9,13.9z'
+        ></path>
+      </svg>
+    </i>
+  );
+};
+
 const CustomIcons = {
   ListIcon,
   GraphIcon,
   LightBtnIcon,
   DarkBtnIcon,
+  HeartIcon,
 };
 
 export default CustomIcons;

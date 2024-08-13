@@ -2,7 +2,9 @@ import { DefaultTheme } from 'styled-components';
 
 const colors = {
   white: '#FFFFFF',
+  black: '#000',
   cloudyGray: '#B8B7B5',
+
   // cloudyGray: '#D9D9D9',
 };
 
@@ -11,25 +13,12 @@ const fontSize = {
   //   subTitle: '1.875rem',
 };
 
-const common = {
-  flexCenter: `
-    display: flex;
-    justify-contents: center;
-    align-items: center;
-  `,
-  flexCenterColumn: `
-    display: flex;
-    flex-direction: column;
-    justify-contents: center;
-    align-items: center;
-  `,
-};
-
 const lightTheme: DefaultTheme = {
   colorBorderGray: '#eee',
   colorHover: '#F5F5F5',
   colorMain: '#ffffff4d',
   colorBg: '#F7F7FA',
+  translucentWhite: 'rgba(255, 255, 255, 0.95)',
   colorMainFont: 'rgb(55, 53, 47)',
   colorSkyBlue: '#afe4f8',
   colorAliceBlue: 'aliceblue',
@@ -39,20 +28,22 @@ const lightTheme: DefaultTheme = {
   colorCloudyGray: '#B8B7B5',
   colorDarkGray: '#666',
   colorWhite: '#FFFFFF',
+  colorBlack: '#121212',
   colorRed: 'tomato',
   colorDiRed: '#FE9090',
   colorShadow: '0 3px 6px rgba(0, 0, 0, .16)',
   colorDarkShadow: '0 3px 6px rgba(0, 0, 0, .5)',
   colors: { ...colors },
   fontSize: { ...fontSize },
-  common: { ...common },
 };
 
 const darkTheme: DefaultTheme = {
   colorBorderGray: '#eee',
   colorHover: '#585D6E4d',
   colorMain: '#585D6E4d',
-  colorBg: '#1B1D25',
+  // colorBg: '#1B1D25',
+  colorBg: '#0c1219',
+  translucentWhite: 'rgba(0, 0, 0, 0.5)',
   colorMainFont: '#FAFAFA',
   colorSkyBlue: '#4d91df',
   colorAliceBlue: '#4d91df',
@@ -61,14 +52,15 @@ const darkTheme: DefaultTheme = {
   colorGray: '#D9D9D9',
   colorCloudyGray: '#B8B7B5',
   colorDarkGray: '#D9D9D9',
-  colorWhite: '#FFFFFF',
+  colorWhite: '#282C34',
+  // colorBlack: '#FAFAFA',
+  colorBlack: '#e6e6e6',
   colorRed: '#FC585A',
   colorDiRed: '#FE9090',
-  colorShadow: '0 4px 7px rgb(68 68 68 / .8)',
+  colorShadow: '0 4px 7px rgb(68 68 68 / 0.8)',
   colorDarkShadow: '0 3px 6px rgba(255, 255, 255, .5)',
   colors: { ...colors },
   fontSize: { ...fontSize },
-  common: { ...common },
 };
 
 const theme = {

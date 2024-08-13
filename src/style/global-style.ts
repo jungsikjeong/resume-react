@@ -5,16 +5,16 @@ a {
   color:${({ theme }) => theme.colors.cloudyGray};
   text-decoration: none;
   padding-bottom: .2rem;
-  border-bottom: 1px solid #bbb;
   transition: all .2s linear;
   &:hover{
     color:${({ theme }) => theme.colorMainFont};
   }
 }
 
-ul{
-  padding: 0;
+ul, li {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 button{
@@ -39,6 +39,14 @@ p{
   color:${({ theme }) => theme.colorDarkGray};
   font-weight: 200;
   margin: 0;
+}
+
+input{
+  background-color: transparent;
+}
+
+.hidden{
+  visibility: hidden;
 }
 
 .nesting-ul{
@@ -69,6 +77,10 @@ p{
   font-weight: bold;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .more{
   color:${({ theme }) => theme.colors.cloudyGray};
   transition: all .2s linear;
@@ -90,6 +102,8 @@ p{
         
       }
   }
+
+
 `;
 
 export default GlobalStyle;

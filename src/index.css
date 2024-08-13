@@ -1,32 +1,67 @@
 @font-face {
   font-family: 'BM Jua';
-  src: local('BM Jua'), local('BMJua'),
+  src:
+    local('BM Jua'),
+    local('BMJua'),
     url('./assets/fonts/BMJUA_otf.otf') format('opentype'),
     url('./assets/fonts/BMJUA_ttf.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 @font-face {
   font-family: 'BMHANNAProOTF';
-  src: local('BMHANNAProOTF'),
+  src:
+    local('BMHANNAProOTF'),
     url('./assets/fonts/BMHANNAProOTF.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
+
+@font-face {
+  font-family: 'VariableFont_wght';
+  src:
+    local('VariableFont_wght'),
+    url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
 @font-face {
   font-family: 'Pretendard-Regular';
-  src: local('Pretendard-Regular'),
+  src:
+    local('Pretendard-Regular'),
     url('./assets/fonts/Pretendard-Regular.woff2') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 body {
   margin: 0;
-  font-family: 'BM Jua', sans-serif;
+  /* font-family: 'BM Jua', sans-serif; */
+  font-family: 'NotoSansKR', sans-serif;
+  cursor: url('../public/images/cursor-pointer.png'), auto;
+}
+
+a {
+  cursor: url('../public/images/cursor-pointer-hover.png'), auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

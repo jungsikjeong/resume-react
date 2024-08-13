@@ -6,10 +6,14 @@ const Container = styled.div`
   max-width: 900px;
   position: fixed;
   left: 0;
-  right: 0;
+  right: -30px;
   bottom: 0;
   margin: 0 auto;
   z-index: 100;
+
+  @media (max-width: 1024px) {
+    right: 0;
+  }
 `;
 
 const Wrapper = styled.div<{ $visible: boolean }>`
@@ -25,7 +29,7 @@ const Wrapper = styled.div<{ $visible: boolean }>`
   height: 48px;
   border-radius: 100%;
   z-index: 100;
-  cursor: pointer;
+  cursor: url('/images/cursor-pointer-hover.png'), auto;
   background: #fff;
   box-shadow: 0 0 3px 2px #d6d6d6;
   color: #37352f;
@@ -55,7 +59,7 @@ const TopMoveButton = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       // 스크롤 위치가 (전체 문서 높이 - 현재 창의 높이)와 거의 동일하다면 맨 하단에 도달한 것으로 간주
-      if (scrollPosition >= totalHeight - windowHeight - 10) {
+      if (scrollPosition >= totalHeight - windowHeight - 450) {
         setVisible(true);
       } else {
         setVisible(false);
