@@ -71,6 +71,7 @@ const HomePage = () => {
         </Box>
         <Section name='skills' title={'💻 Skills'} contents={skills?.contents} />
         <Section name='portfolio' title={'🎨 Portfolio'} contents={[]} /> */}
+
       <LadderImage />
     </Container>
   );

@@ -42,7 +42,7 @@ const Layout = ({ children }: LayoutProps) => {
   const [isMenu, setMenuClose] = useRecoilState(menuState);
 
   const location = useLocation();
-  console.log(location.pathname);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,

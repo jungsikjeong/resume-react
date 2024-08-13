@@ -1,14 +1,13 @@
 import { styled } from 'styled-components';
+
 import Cat from './cat';
 import ProjectList from './project-list';
 
-const Container = styled.div`
-  height: 100vh;
-`;
+const Container = styled.div``;
 
 const TopWrap = styled.div`
   display: flex;
-
+  padding: 0 1rem;
   @media (max-width: 1024px) {
     display: initial;
   }

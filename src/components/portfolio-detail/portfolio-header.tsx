@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import CustomIcons from '../../assets/svgIcon/icons';
-import { PortfolioType } from '../../assets/type/portfolio';
+import { IProjectList } from '../../interface/project-list';
+
 import { themeState } from '../../atoms/theme';
 import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
 import FlexBox from '../flex-box/flex-box';
@@ -65,7 +66,7 @@ const Tag = styled.li<{ $bgcolor: string }>`
   border-radius: 5px;
 `;
 interface PortfolioHeaderProps {
-  item: PortfolioType;
+  item: IProjectList;
 }
 
 const PortfolioHeader = ({ item }: PortfolioHeaderProps) => {

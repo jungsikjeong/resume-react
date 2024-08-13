@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   background-color: #222;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-
   color: #8f8f8f;
   text-align: center;
   @media (max-width: 767px) {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ImageWrap = styled.div`
@@ -41,7 +42,9 @@ const LadderImage = () => {
     <>
       {showImage && (
         <ImageWrap>
-          <Image src='/images/ladder.gif' alt='' style={{ width: '200px' }} />
+          <Link to='/projects'>
+            <Image src='/images/ladder.gif' alt='' style={{ width: '200px' }} />
+          </Link>
         </ImageWrap>
       )}
     </>
