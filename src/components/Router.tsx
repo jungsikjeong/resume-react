@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { HomePage } from '../pages/home';
-import { ProfilePage } from '../pages/profile';
-import { ProjectPage } from '../pages/project';
-import { ProjectsPage } from '../pages/projects';
+const HomePage = lazy(() => import('../pages/home/home'));
+const ProfilePage = lazy(() => import('../pages/profile/profile'));
+const ProjectPage = lazy(() => import('../pages/project/project'));
+const ProjectsPage = lazy(() => import('../pages/projects/projects'));
+const IntroDetailPage = lazy(
+  () => import('../pages/intro-detail/intro-detail')
+);
 
 const Router = () => {
   return (
-    <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/profile' element={<ProfilePage />} />
-      <Route path='/projects' element={<ProjectsPage />} />
-      <Route path='/project/:date/:id' element={<ProjectPage />} />
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/intro' element={<IntroDetailPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/projects' element={<ProjectsPage />} />
+        <Route path='/project/:date/:id' element={<ProjectPage />} />
+      </Routes>
+    </Suspense>
   );
 };
 
