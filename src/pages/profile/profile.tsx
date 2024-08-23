@@ -3,6 +3,8 @@ import { styled } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import StyledButton from '../../components/common/styled-button';
 import EamilForm from '../../components/email-form';
+import { useRecoilValue } from 'recoil';
+import { themeState } from '../../atoms/theme';
 
 const Container = styled.div``;
 
@@ -67,7 +69,7 @@ const Image = styled.img`
   }
 `;
 
-const BottomWrap = styled.div`
+const BottomWrap = styled.div<{ $isdarkmode: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +78,8 @@ const BottomWrap = styled.div`
   margin-top: 10rem;
   width: 100%;
   height: 300px;
-  background-image: url('/images/profile/profile-img-bg.jpg');
+  background-image: ${({ $isdarkmode }) =>
+    $isdarkmode ? `url('/images/profile/profile-img-bg.jpg')` : 'none'};
 
   span {
     font-weight: 600;
@@ -97,6 +100,7 @@ const EmailMotionWrap = styled(motion.div)`
 `;
 
 const Profile = () => {
+  const theme = useRecoilValue(themeState);
   const [isContact, setIsContact] = useState(false);
 
   return (
@@ -125,7 +129,7 @@ const Profile = () => {
         </ImageWrap>
       </TopWrap>
 
-      <BottomWrap>
+      <BottomWrap $isdarkmode={theme === 0}>
         {!isContact && (
           <>
             <span> wndtlr1024@gamil.com</span>

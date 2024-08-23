@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import { PortfolioType } from '../../assets/type/portfolio';
+import { IProjectList } from '../../interface/project-list';
 
 import DarkModeButton from '../common/theme-switch-btn';
 import PortfolioHeader from './portfolio-header';
@@ -54,7 +54,7 @@ const Box = styled.div`
 `;
 
 interface PortfolioDetailProps {
-  item: PortfolioType;
+  item: IProjectList;
 }
 
 const PortfolioDetail = ({ item }: PortfolioDetailProps) => {

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { PortfolioType } from '../../assets/type/portfolio';
+import { IProjectList } from '../../interface/project-list';
 import { tagsRandomBgColor } from '../../utils/tags-random-bg-color';
 import { throttle } from '../../utils/throttle';
 
@@ -83,7 +83,7 @@ const Date = styled.div`
 `;
 
 interface PortfolioItemProps {
-  item: PortfolioType;
+  item: IProjectList;
 }
 
 const PortfolioItem = ({ item }: PortfolioItemProps) => {

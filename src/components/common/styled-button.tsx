@@ -16,15 +16,17 @@ const SButton = styled.button`
 
 interface IButtonProps {
   type?: 'button' | 'submit' | 'reset';
+  onAction?: (value?: number) => void;
   children: React.ReactNode;
 }
 const StyledButton = ({
   children,
   type = 'button',
+  onAction,
   ...props
 }: IButtonProps) => {
   return (
-    <SButton type={type} {...props}>
+    <SButton type={type} onClick={() => onAction && onAction()} {...props}>
       {children}
     </SButton>
   );

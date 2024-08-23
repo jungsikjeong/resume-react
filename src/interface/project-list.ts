@@ -1,4 +1,4 @@
-export type PortfolioType = {
+export interface IProjectList {
   id: number;
   title: string;
   tags: string[];
@@ -10,6 +10,7 @@ export type PortfolioType = {
   codeImage?: string[];
   github: string;
   demo?: string;
+  icons?: string;
   date: string;
   contents: any[];
-};
+}
