@@ -6,6 +6,19 @@ import { styled } from 'styled-components';
 import CustomIcons from '../../assets/svgIcon/icons';
 import useScrollPosition from '../../hook/use-scroll-position';
 import Menu from './menu';
+import { menuState } from '../../atoms/menu';
+import { useRecoilState } from 'recoil';
+
+const Overlay = styled.div`
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.5);
+  visibility: visible;
+`;
 
 const Container = styled.header<{ $isscrolled: boolean }>`
   padding: 1rem 3rem;
@@ -79,6 +92,8 @@ const Logo = styled.img<{ $isscrolled: boolean }>`
 `;
 
 const Header = () => {
+  const [isMenu, setMenuClose] = useRecoilState(menuState);
+
   const [title, setTitle] = useState('web');
   const isScrolled = useScrollPosition();
 
@@ -95,6 +110,8 @@ const Header = () => {
 
   return (
     <Container $isscrolled={isScrolled}>
+      {isMenu && <Overlay onClick={() => setMenuClose(false)} />}
+
       <Link to='/'>
         <Logo src='/images/logo.jpeg' $isscrolled={isScrolled} />
       </Link>

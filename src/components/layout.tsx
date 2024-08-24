@@ -31,19 +31,7 @@ const Wrapper = styled(motion.div)<{ $iscurrentpage: boolean }>`
   }
 `;
 
-const Overlay = styled.div`
-  position: fixed;
-  z-index: 300;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(34, 34, 34, 0.5);
-  visibility: visible;
-`;
-
 const Layout = ({ children }: LayoutProps) => {
-  const [isMenu, setMenuClose] = useRecoilState(menuState);
   const [isCurrentPage, setIsCurrentPage] = useState(false);
 
   const location = useLocation();
@@ -60,7 +48,6 @@ const Layout = ({ children }: LayoutProps) => {
     <Container>
       <ScrollProgressBar />
       <Header />
-      {isMenu && <Overlay onClick={() => setMenuClose(false)} />}
       <Wrapper
         key={location.pathname || ''}
         initial={{ x: 10, opacity: 0 }}
