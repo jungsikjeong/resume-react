@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { menuState } from '../atoms/menu';
@@ -18,9 +18,9 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.div)<{ $iscurrentpage: boolean }>`
   position: relative;
-  max-width: 1280px;
+  max-width: ${({ $iscurrentpage }) => ($iscurrentpage ? '100%' : '1280px')};
   margin: 0 auto;
 
   @media (max-width: 1460px) {
@@ -44,6 +44,7 @@ const Overlay = styled.div`
 
 const Layout = ({ children }: LayoutProps) => {
   const [isMenu, setMenuClose] = useRecoilState(menuState);
+  const [isCurrentPage, setIsCurrentPage] = useState(false);
 
   const location = useLocation();
 
@@ -51,6 +52,8 @@ const Layout = ({ children }: LayoutProps) => {
     window.scrollTo({
       top: 0,
     });
+
+    setIsCurrentPage(location.pathname.startsWith('/project/'));
   }, [location.pathname]);
 
   return (
@@ -63,6 +66,7 @@ const Layout = ({ children }: LayoutProps) => {
         initial={{ x: 10, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
+        $iscurrentpage={isCurrentPage}
       >
         {children}
         <TopMoveButton />

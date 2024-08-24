@@ -23,6 +23,7 @@ const Container = styled.header<{ $isscrolled: boolean }>`
     height: ${({ $isscrolled }) => ($isscrolled ? '60px' : '130px')};
     background-color: ${({ theme }) => theme.colorWhite};
   }
+
   @media (max-width: 767px) {
     height: ${({ $isscrolled }) => ($isscrolled ? '60px' : '60px')};
   }
@@ -114,6 +115,7 @@ const Header = () => {
         </IconWrap>
         {title}
       </Wrapper>
+
       <Menu />
     </Container>
   );

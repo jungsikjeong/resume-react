@@ -6,7 +6,7 @@ const ImageWrap = styled.div`
   position: fixed;
   left: 10px;
   bottom: 0;
-  z-index: 400;
+  z-index: 200;
 
   &:hover img {
     margin-left: 20px;
