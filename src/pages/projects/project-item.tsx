@@ -62,7 +62,7 @@ const Figure = styled.figure`
 `;
 
 interface IProjectItemProps {
-  item: IProjectList;
+  item: any;
 }
 
 let x = 0;

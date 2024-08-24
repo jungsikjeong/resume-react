@@ -8,6 +8,7 @@ const Container = styled.footer`
   width: 100%;
   margin: 0 auto;
   margin-top: 5rem;
+  position: relative;
 `;
 
 const Wrapper = styled.div`
