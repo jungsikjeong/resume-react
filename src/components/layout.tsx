@@ -14,6 +14,10 @@ interface LayoutProps {
   children: ReactNode;
 }
 
+const Container = styled.div`
+  overflow: hidden;
+`;
+
 const Wrapper = styled(motion.div)`
   position: relative;
   max-width: 1280px;
@@ -50,7 +54,7 @@ const Layout = ({ children }: LayoutProps) => {
   }, [location.pathname]);
 
   return (
-    <>
+    <Container>
       <ScrollProgressBar />
       <Header />
       {isMenu && <Overlay onClick={() => setMenuClose(false)} />}
@@ -64,7 +68,7 @@ const Layout = ({ children }: LayoutProps) => {
         <TopMoveButton />
         <Footer />
       </Wrapper>
-    </>
+    </Container>
   );
 };
 
