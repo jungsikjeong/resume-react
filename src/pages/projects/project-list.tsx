@@ -53,11 +53,9 @@ const ProjectList = () => {
       </Year>
       <List>
         {project2023
-          .slice()
-          .reverse()
-          .map((item) => (
-            <ProjectItem item={item} key={item.id} />
-          ))}
+          ?.slice()
+          ?.reverse()
+          ?.map((item) => <ProjectItem item={item} key={item.id} />)}
       </List>
 
       <Dummy />
@@ -71,11 +69,9 @@ const ProjectList = () => {
 
       <List>
         {project2024
-          .slice()
-          .reverse()
-          .map((item) => (
-            <ProjectItem item={item} key={item.id} />
-          ))}
+          ?.slice()
+          ?.reverse()
+          ?.map((item) => <ProjectItem item={item} key={item.id} />)}
       </List>
 
       <Dummy />

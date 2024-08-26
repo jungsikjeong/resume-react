@@ -1,7 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
-import { menuState } from '../atoms/menu';
 
 import Header from './common/header';
 import ScrollProgressBar from './common/scroll-progress-bar';
@@ -10,6 +8,7 @@ import Footer from './common/footer';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import UseCurrentPage from '../hook/use-current-page';
+import Loading from './common/loading';
 
 interface LayoutProps {
   children: ReactNode;

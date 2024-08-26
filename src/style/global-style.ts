@@ -28,11 +28,12 @@ button{
   outline: none;
 }
 
+
+
 body {
   color:${({ theme }) => theme.colorMainFont};
   background-color:${({ theme }) => theme.colorBg};
   transition: all 0.25s linear;
-
 }
 
 p{
@@ -101,6 +102,10 @@ input{
 }
 .mt-4{
   margin-top:4rem;
+}
+
+.color-white{
+  color:#FFFFFF;
 }
 
 

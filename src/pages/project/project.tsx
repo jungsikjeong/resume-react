@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { headerColorstate } from '../../atoms/header-color';
+import { isHeaderColorstate } from '../../atoms/is-header-color';
 import FormattedText from '../../components/common/formatted-text';
 import StyledButton from '../../components/common/styled-button';
 
@@ -71,13 +71,6 @@ const Image = styled.img`
   width: 100%;
   height: auto;
   aspect-ratio: auto 1/1;
-  /* border-radius: 16px; */
-  /* opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-
-  &.in-view {
-    opacity: 1;
-  } */
 `;
 
 const ButtonWrap = styled.div`
@@ -85,18 +78,12 @@ const ButtonWrap = styled.div`
   width: 241px;
 `;
 
-const Test = styled.div`
-  /* position: relative; */
-`;
-
 const Project = () => {
   const location = useLocation();
 
-  const setHeaderColor = useSetRecoilState(headerColorstate);
+  const setIsHeaderColor = useSetRecoilState(isHeaderColorstate);
 
   const [{ item }, setItem] = useState({ ...location.state });
-
-  const sectionRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,9 +91,9 @@ const Project = () => {
       const changePoint = 961;
 
       if (scrollY > changePoint) {
-        setHeaderColor(false);
+        setIsHeaderColor(false);
       } else {
-        setHeaderColor(true);
+        setIsHeaderColor(true);
       }
     };
 
@@ -115,10 +102,11 @@ const Project = () => {
     handleScroll();
 
     return () => {
-      setHeaderColor(false);
+      setIsHeaderColor(false);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [setHeaderColor]);
+  }, [setIsHeaderColor]);
+
   return (
     <Container>
       {/* 썸네일 이미지 */}
@@ -126,7 +114,6 @@ const Project = () => {
         <Thumbnail url={item?.thumbnail} />
       </ThumbnailWrapper>
 
-      <Test ref={sectionRef} />
       <Wrapper>
         <InnerWrap>
           {/* 제목 */}

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
 import intro from '../../assets/json/intro.json';
@@ -7,19 +6,11 @@ import Carousel from '../../components/carousel/carousel';
 import LadderImage from '../../components/ladder-image';
 import Blog from './blog';
 import IntroSection from './intro-section';
+import Loading from '../../components/common/loading';
 
 const Container = styled.div`
   position: relative;
-`;
-
-const Box = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  min-height: 100vh;
 `;
 
 const HomePage = () => {
