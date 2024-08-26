@@ -106,7 +106,7 @@ const ProjectItem = ({ item }: IProjectItemProps) => {
   }, []);
 
   const onPageMove = (id: number) => {
-    navigate(`/project/${item.date.slice(0, 4)}/${id}`, {
+    navigate(`/project`, {
       state: {
         item,
       },

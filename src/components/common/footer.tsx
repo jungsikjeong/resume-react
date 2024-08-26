@@ -4,14 +4,16 @@ import { SiBloglovin } from 'react-icons/si';
 import { MdOutlineEmail } from 'react-icons/md';
 
 const Container = styled.footer`
-  max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 5rem;
+  padding-top: 5rem;
   position: relative;
+  background-color: ${({ theme }) => theme.colorBg};
 `;
 
 const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 800px;
   padding: 3rem;
   background-color: #222;
   border-top-left-radius: 16px;

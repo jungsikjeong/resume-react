@@ -1,74 +1,50 @@
 [
   {
     "id": 0,
-    "title": "뉴진스 이미지",
+    "title": "뉴진스 포토 카드 v1",
+    "subTitle": [
+      "DOM 조작 능력 강화와 데이터 흐름 최적화",
+      "프로젝트 기술 스택 개요"
+    ],
     "tags": ["Ejs", "Express", "MongoDB", "Mongoose"],
     "thumbnail": "/images/thumbnail/NewJeans_card-web.gif",
     "github": "https://github.com/jungsikjeong/exercise-book/tree/master/web02",
     "icons": "/images/project-icons/NewJeans.png",
     "date": "2023.01.29 ~ 2023.02.05",
-    "contents": [],
-    "images": ["/images/thumbnail/NewJeans_card-web.gif"],
-    "demo": "",
-    "description": "자바스크립트를 기반으로 한 웹 애플리케이션을 개발하였습니다. 이 프로젝트의 목표는 풀스택 자바스크립트만을 사용하여 사용자가 간단한 게시물을 작성하고 관리할 수 있는 웹 서비스를 만드는 것이었습니다.",
-
-    "description2": "이 프로젝트는 풀스택 자바스크립트 환경에서의 프로젝트 관리 능력을 키우는 데 중점을 두었고, 클라이언트와 서버 간의 원활한 데이터 흐름과 사용자가 원하는 기능을 구현하는 데 성공하였습니다.",
-
-    "stackDescription": "주요 기술 스택으로는 Node.js와 Express를 백엔드 프레임워크로 사용하였고, MongoDB와 Mongoose를 데이터베이스 관리와 스키마 정의에 사용했습니다. 프론트엔드는 EJS 템플릿 엔진을 통해 서버에서 렌더링된 HTML을 동적으로 생성하였고, 이미지 업로드 기능은 Multer 라이브러리를 활용했습니다. 마지막으로, 클라이언트-서버 간 요청 처리는 모두 JavaScript로 통합하여 구현하였습니다.",
-
-    "detailDescription": [
-      {
-        "title": "1)회원가입 및 로그인",
-        "description": "사용자는 회원가입 및 로그인 기능을 통해 시스템에 접근할 수 있습니다. 이 과정에서 패스워드는 해시 처리하여 안전하게 저장하며, 사용자 인증은 세션 기반으로 처리하였습니다."
-      },
-      {
-        "title": "2) 게시글 작성 및 이미지 업로드",
-        "description": "사용자는 게시글을 작성하고 사진을 함께 업로드할 수 있습니다. 이를 위해 Multer를 사용하여 서버 측에 이미지를 저장하고, 게시글과 연동하여 관리할 수 있도록 구현하였습니다."
-      },
-      {
-        "title": "4) 카테고리별 검색 기능",
-        "description": "또한, 사용자는 게시글을 카테고리별로 검색할 수 있는 기능을 제공하여, 특정 주제에 대한 게시글을 쉽게 찾을 수 있도록 하였습니다."
-      }
+    "images": [
+      "/images/projects/newjeans-v1-01.png",
+      "/images/projects/newjeans-v1-02.png",
+      "/images/projects/newjeans-v1-03.png"
     ],
-    "whatILearned": "개발 과정에서 가장 큰 도전은 이미지 업로드 처리와 MongoDB와의 효율적인 연동이었습니다. 이를 해결하기 위해 Multer를 사용하여 서버에 이미지를 저장하고, Mongoose를 활용하여 각 게시물과 연동된 이미지 정보를 저장하고 불러오는 로직을 구현했습니다."
+    "demo": "",
+    "description": "자바스크립트를 기반으로 한 웹 애플리케이션을 개발하였습니다.\n이 프로젝트의 목표는 리액트, 앵귤러, 뷰를 사용하지 않고\n자바스크립트만을 사용하여 사용자가 간단한 게시물을 작성하고\n관리할 수 있는 웹 서비스를 만드는 것이었습니다.",
+
+    "description2": "이 프로젝트는 자바스크립트 환경에서 DOM을 효과적으로 조작하는 능력을 발전시키는 데 중점을 두었고\n클라이언트와 서버 간의 원활한 데이터 흐름 및 원하는 기능을 구현하였습니다.",
+
+    "description3": "주요 기술 스택으로는 Node.js와 Express를 백엔드로 사용하였고\n MongoDB와 Mongoose를 데이터베이스 관리와 스키마 정의에 사용했습니다.\n\n프론트엔드는 EJS 템플릿 엔진을 통해 서버에서 렌더링된 HTML을 동적으로 생성하였고\n 이미지 업로드 기능은 Multer 라이브러리를 활용했습니다.\n 마지막으로, 클라이언트-서버 간 요청 처리는 모두 JavaScript로 통합하여 구현하였습니다."
   },
   {
     "id": 1,
-    "title": "뉴진스 포토 카드",
-    "tags": [
-      "React",
-      "StyledComponent",
-      "Redux",
-      "Redux/toolkit",
-      "use-image",
-      "Node.js",
-      "MongoDB"
+    "title": "뉴진스 포토 카드 v2",
+    "subTitle": [
+      "DOM 조작 능력 강화와 데이터 흐름 최적화",
+      "프로젝트 기술 스택 개요"
     ],
     "thumbnail": "./images/thumbnail/NewJeans!.png",
     "github": "https://github.com/jungsikjeong/newJeans",
     "icons": "/images/project-icons/NewJeans.png",
     "date": "2023.02.20 ~ 2023.03.22",
-    "contents": [],
     "images": [
-      "./images/portfolio/NewJeans!1.gif",
-      "./images/portfolio/NewJeans!2.gif",
-      "./images/portfolio/NewJeans!3.gif"
+      "./images/projects/NewJeans!1.gif",
+      "./images/projects/NewJeans!2.gif",
+      "./images/projects/NewJeans!3.gif"
     ],
     "demo": "",
-    "description": "뉴진스의 다양한 모습들을 내가 커스텀해서 올릴 수 있도록 개발한 웹 사이트입니다.<a href='https://github.com/jungsikjeong/exercise-book/tree/master/web02' target='_blank' rel='noopener noreferrer'>🔖 NewJeans-card-website</a> 이 프로젝트를 리액트로 바꾸고, 회원가입/로그인,유저 프로필,이미지 커스텀 기능,페이지네이션 기타 등등의 기능을 추가하였습니다.",
-    "whatIDid": [
-      "React 기반의 프론트엔드 개발",
-      "node.js,express,mongodb기반의 백엔드 개발",
-      "use-image라이브러리를 사용하여 이미지 커스텀 기능 개발",
-      "게시글 작성,수정,삭제 기능 개발",
-      "게시글 페이지네이션 개발",
-      "유저 프로필 수정 기능 개발"
-    ],
-    "whatILearned": [
-      "커스텀 이미지 기능을 위해 'use-image' 라이브러리를 프로젝트에 적용했습니다. 강의 중심의 학습에 익숙한 저는 누군가가 모든 것을 설명해 주는 것에 의존했었습니다.",
-      "그러나 이번에는 직접 공식 문서를 찾아가며 필요한 정보를 스스로 찾아보고 적용하는 과정을 거치게 되었습니다.",
-      "이런 새로운 학습 방식에서 어색함을 느꼈지만, 동시에 스스로 문제를 해결하고 적용하는 데에서 큰 성취감을 느꼈습니다. 이제는 더 다양한 도구와 라이브러리를 스스로 탐구해보며, 자기주도적인 학습에 익숙해지고 있습니다."
-    ]
+    "description": "자바스크립트를 기반으로 한 웹 애플리케이션을 개발하였습니다.\n이 프로젝트의 목표는 리액트, 앵귤러, 뷰를 사용하지 않고\n자바스크립트만을 사용하여 사용자가 간단한 게시물을 작성하고\n관리할 수 있는 웹 서비스를 만드는 것이었습니다.",
+
+    "description2": "이 프로젝트는 자바스크립트 환경에서 DOM을 효과적으로 조작하는 능력을 발전시키는 데 중점을 두었고\n클라이언트와 서버 간의 원활한 데이터 흐름 및 원하는 기능을 구현하였습니다.",
+
+    "description3": "주요 기술 스택으로는 Node.js와 Express를 백엔드로 사용하였고\n MongoDB와 Mongoose를 데이터베이스 관리와 스키마 정의에 사용했습니다.\n\n프론트엔드는 EJS 템플릿 엔진을 통해 서버에서 렌더링된 HTML을 동적으로 생성하였고\n 이미지 업로드 기능은 Multer 라이브러리를 활용했습니다.\n 마지막으로, 클라이언트-서버 간 요청 처리는 모두 JavaScript로 통합하여 구현하였습니다."
   },
   {
     "id": 2,
@@ -80,8 +56,8 @@
     "date": "2023.03.24 ~ 2023.04.27",
     "contents": [],
     "images": [
-      "./images/portfolio/NewJeans-Gallery1.gif",
-      "./images/portfolio/NewJeans-Gallery2.gif"
+      "./images/projects/NewJeans-Gallery1.gif",
+      "./images/projects/NewJeans-Gallery2.gif"
     ],
     "demo": "https://new-jeans-gallery.vercel.app/",
     "description": "벨로그라는 개발자 블로그에서 어떤분의 작업물을 보고 마음에들어 카피캣하였습니다. <br/> 최근에 배운 TypeScript를 사이트에 적용했습니다.<br/> 타입 지정은 type 키워드 보다 유연하고 여러 라이브러리에서 선호하는 방식인 interface키워드를 주로 사용해줬습니다. <br/>전역으로 상태관리를 해야하는 경우가 생겼는데, 프로젝트 규모가 작아 react-recoil로 status를 관리해줬습니다.",
@@ -111,12 +87,12 @@
     "date": "2023.09.19 ~ 2023.10.04",
     "contents": [],
     "images": [
-      "./images/portfolio/Do-Good_Evening!1.gif",
-      "./images/portfolio/Do-Good_Evening!2.gif",
-      "./images/portfolio/Do-Good_Evening!3.gif",
-      "./images/portfolio/Do-Good_Evening!4.gif",
-      "./images/portfolio/Do-Good_Evening!5.gif",
-      "./images/portfolio/Do-Good_Evening!6.gif"
+      "./images/projects/Do-Good_Evening!1.gif",
+      "./images/projects/Do-Good_Evening!2.gif",
+      "./images/projects/Do-Good_Evening!3.gif",
+      "./images/projects/Do-Good_Evening!4.gif",
+      "./images/projects/Do-Good_Evening!5.gif",
+      "./images/projects/Do-Good_Evening!6.gif"
     ],
     "demo": "https://do-good-evening.vercel.app/",
 
@@ -141,7 +117,7 @@
     "icons": "/images/project-icons/perfume.jpeg",
     "date": "2023.10.20 ~ 2023.12.31",
     "contents": [],
-    "images": ["./images/portfolio/read-a-perfume.gif"],
+    "images": ["./images/projects/read-a-perfume.gif"],
     "demo": "",
     "description": "이 프로젝트는 저의 인생 첫 팀 프로젝트로서 의미있는 경험을 쌓을 수 있는 기회가 되었습니다.<br/>리드 어 퍼퓸은 “화장품 정보 어플리케이션 화해”를 모티브 삼아 만든 향수 플랫폼입니다. <br/> 사용자들에게 향수에대한 자유로운 의견을 나눌 수 있는 공간을 제공합니다.",
     "whatIDid": [

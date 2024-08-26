@@ -63,7 +63,7 @@ const IntroDetailPage = () => {
     });
   }, []);
 
-  const addToRefs = (el: HTMLImageElement | null) => {
+  const onAddToRefs = (el: HTMLImageElement | null) => {
     if (el && !observerElRefs.current.includes(el)) {
       observerElRefs.current.push(el);
     }
@@ -75,7 +75,7 @@ const IntroDetailPage = () => {
         <Image
           src={item?.mainImage}
           alt='intro-img'
-          ref={addToRefs}
+          ref={onAddToRefs}
           $objectfit='fill'
         />
       </ImageWrap>
@@ -96,7 +96,7 @@ const IntroDetailPage = () => {
                   style={{ borderRadius: '12px' }}
                   src={item?.images[index]}
                   alt='intro-img'
-                  ref={addToRefs}
+                  ref={onAddToRefs}
                   $objectfit={getObjectFit(item?.images[index])}
                 />
               </ImageWrap>

@@ -90,6 +90,19 @@ input{
   }
 }
 
+.mt-1{
+  margin-top:1rem;
+}
+.mt-2{
+  margin-top:2rem;
+}
+.mt-3{
+  margin-top:3rem;
+}
+.mt-4{
+  margin-top:4rem;
+}
+
 
 @media only screen and (max-width: 768px) {
   body {

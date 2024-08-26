@@ -10,13 +10,6 @@ import IntroSection from './intro-section';
 
 const Container = styled.div`
   position: relative;
-
-  /* @media (max-width: 1460px) {
-    padding-top: 10rem;
-  }
-  @media (max-width: 767px) {
-    padding-top: 5rem;
-  } */
 `;
 
 const Box = styled.div`
@@ -30,8 +23,6 @@ const Box = styled.div`
 `;
 
 const HomePage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <Container>
       {/* 베스트 프로젝트 */}
