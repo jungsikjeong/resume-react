@@ -5,9 +5,32 @@ import styled from 'styled-components';
 import { isHeaderColorstate } from '../../atoms/is-header-color';
 import FormattedText from '../../components/common/formatted-text';
 import StyledButton from '../../components/common/styled-button';
+import { TfiBackLeft } from 'react-icons/tfi';
+import FlexBox from '../../components/flex-box/flex-box';
 
 const Container = styled.div`
   position: relative;
+`;
+
+const PreviousPageBtn = styled.div<{ $visible: boolean }>`
+  position: fixed;
+  top: 5rem;
+  right: 0.9em;
+  z-index: 300;
+  font-size: 13px;
+  opacity: ${({ $visible }) => ($visible ? '0' : '1')};
+  transition: opacity 0.2s ease;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const SLink = styled(Link)`
+  color: ${({ theme }) => theme.colorMainFont};
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid ${({ theme }) => theme.colorSkyBlue};
+  display: block;
 `;
 
 const ThumbnailWrapper = styled.div`
@@ -84,6 +107,7 @@ const Project = () => {
   const setIsHeaderColor = useSetRecoilState(isHeaderColorstate);
 
   const [{ item }, setItem] = useState({ ...location.state });
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,8 +116,10 @@ const Project = () => {
 
       if (scrollY > changePoint) {
         setIsHeaderColor(false);
+        setVisible(false);
       } else {
         setIsHeaderColor(true);
+        setVisible(true);
       }
     };
 
@@ -105,10 +131,20 @@ const Project = () => {
       setIsHeaderColor(false);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [setIsHeaderColor]);
-
+  }, [setIsHeaderColor, setVisible]);
   return (
     <Container>
+      <PreviousPageBtn $visible={visible}>
+        <SLink to='/projects'>
+          <FlexBox alignItems='center' gap='3px'>
+            목록으로
+            <br />
+            돌아가기
+            <TfiBackLeft size={30} />
+          </FlexBox>
+        </SLink>
+      </PreviousPageBtn>
+
       {/* 썸네일 이미지 */}
       <ThumbnailWrapper>
         <Thumbnail url={item?.thumbnail} />
