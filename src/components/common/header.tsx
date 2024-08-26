@@ -29,7 +29,7 @@ const Container = styled.header<{
   font-weight: 600;
   height: 130px;
   background-color: ${({ theme }) => theme.colorBg};
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease;
 
   @media (max-width: 1460px) {
     position: fixed;
