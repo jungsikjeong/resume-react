@@ -9,6 +9,7 @@ import TopMoveButton from './top-move-button';
 import Footer from './common/footer';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import UseCurrentPage from '../hook/use-current-page';
 
 interface LayoutProps {
   children: ReactNode;
@@ -32,7 +33,7 @@ const Wrapper = styled(motion.div)<{ $iscurrentpage: boolean }>`
 `;
 
 const Layout = ({ children }: LayoutProps) => {
-  const [isCurrentPage, setIsCurrentPage] = useState(false);
+  const { isCurrentPage } = UseCurrentPage({ currentPathname: '/project' });
 
   const location = useLocation();
 
@@ -40,8 +41,6 @@ const Layout = ({ children }: LayoutProps) => {
     window.scrollTo({
       top: 0,
     });
-
-    setIsCurrentPage(location.pathname.startsWith('/project/'));
   }, [location.pathname]);
 
   return (

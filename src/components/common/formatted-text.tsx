@@ -22,9 +22,10 @@ const Container = styled.div<{ $fontsize?: string }>`
   &.sub-title {
     font-weight: bold;
     padding: 1rem 0;
-    font-size: 1.2rem;
+    font-size: ${({ $fontsize }) => ($fontsize ? $fontsize : '1.2rem')};
+
     @media (max-width: 767px) {
-      font-size: 1rem;
+      font-size: ${({ $fontsize }) => ($fontsize ? $fontsize : '1rem')};
       padding: 0;
     }
   }
@@ -36,7 +37,11 @@ const Container = styled.div<{ $fontsize?: string }>`
     line-height: 30px;
 
     @media (max-width: 1024px) {
-      font-size: 0.875rem;
+      font-size: ${({ $fontsize }) => ($fontsize ? $fontsize : '0.875rem')};
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 25px;
     }
   }
 

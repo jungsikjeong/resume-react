@@ -151,7 +151,7 @@ const Carousel = () => {
       <SwiperSlide>
         <ImageWrap>
           <Image
-            src='http://localhost:3000/images/portfolio/gongcha1.png'
+            src='http://localhost:3000/images/projects/gongcha1.png'
             alt='preview-img'
           />
 
@@ -200,7 +200,7 @@ const Carousel = () => {
       <SwiperSlide>
         <ImageWrap>
           <Image
-            src='http://localhost:3000/images/portfolio/read-a-perfume.gif'
+            src='http://localhost:3000/images/projects/read-a-perfume.gif'
             alt='preview-img'
           />
 

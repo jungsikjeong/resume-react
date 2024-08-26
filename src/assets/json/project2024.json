@@ -40,11 +40,11 @@
     ],
     "thumbnail": "./images/thumbnail/gongcha.png",
     "images": [
-      "./images/portfolio/gongcha1.png",
-      "./images/portfolio/gongcha2.png",
-      "./images/portfolio/gongcha3.png",
-      "./images/portfolio/gongcha4.png",
-      "./images/portfolio/gongcha5.png"
+      "./images/projects/gongcha1.png",
+      "./images/projects/gongcha2.png",
+      "./images/projects/gongcha3.png",
+      "./images/projects/gongcha4.png",
+      "./images/projects/gongcha5.png"
     ],
     "github": "https://github.com/jungsikjeong/React_Gongcha",
     "demo": "",
