@@ -6,7 +6,6 @@ import Carousel from '../../components/carousel/carousel';
 import LadderImage from '../../components/ladder-image';
 import Blog from './blog';
 import IntroSection from './intro-section';
-import Loading from '../../components/common/loading';
 
 const Container = styled.div`
   position: relative;

@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { styled } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import CustomIcons from '../../assets/svgIcon/icons';
-import { isHeaderColorstate } from '../../atoms/is-header-color';
-import { menuState } from '../../atoms/menu';
-import UseCurrentPage from '../../hook/use-current-page';
-import useScrollPosition from '../../hook/use-scroll-position';
-import Menu from './menu';
+import { styled } from 'styled-components';
+import CustomIcons from '../../../assets/svgIcon/icons';
+import { isHeaderColorstate } from '../../../atoms/is-header-color';
+import { menuState } from '../../../atoms/menu';
+import useScrollPosition from '../../../hook/use-scroll-position';
+import Menu from '../menu';
+import UseHeaderSetTitle from './hook/use-header-set-title';
 
 const Overlay = styled.div`
   position: fixed;
@@ -28,7 +27,7 @@ const Container = styled.header<{
   font-family: 'VariableFont_wght', sans-serif;
   font-weight: 600;
   height: 130px;
-  background-color: ${({ theme }) => theme.colorBg};
+  /* background-color: ${({ theme }) => theme.colorBg}; */
   transition: all 0.2s ease;
 
   @media (max-width: 1460px) {
@@ -39,7 +38,7 @@ const Container = styled.header<{
     z-index: 400;
     height: ${({ $isscrolled }) => ($isscrolled ? '60px' : '130px')};
     background-color: ${({ theme }) => theme.colorBg};
-    color: ${({ theme }) => theme.colorMainFont};
+    color: ${({ theme }) => `${theme.colorMainFont} !important`};
   }
 
   @media (max-width: 767px) {
@@ -49,7 +48,6 @@ const Container = styled.header<{
 
 const Wrapper = styled.div<{
   $isscrolled: boolean;
-  $iscurrentpage: boolean;
 }>`
   display: flex;
   position: absolute;
@@ -105,23 +103,11 @@ const Logo = styled.img<{ $isscrolled: boolean }>`
 `;
 
 const Header = () => {
-  const location = useLocation();
-  const { isCurrentPage } = UseCurrentPage({ currentPathname: '/project/' });
+  const { currentPageName } = UseHeaderSetTitle();
 
   const isHeaderColor = useRecoilValue(isHeaderColorstate);
   const [isMenu, setMenuClose] = useRecoilState(menuState);
   const isScrolled = useScrollPosition();
-
-  const [title, setTitle] = useState('web');
-
-  useEffect(() => {
-    const pathSegments =
-      location.pathname === '/'
-        ? 'WEB'
-        : location.pathname.split('/').join('').toUpperCase();
-
-    setTitle(pathSegments);
-  }, [location.pathname]);
 
   return (
     <Container
@@ -134,7 +120,7 @@ const Header = () => {
         <Logo src='/images/logo.jpeg' $isscrolled={isScrolled} />
       </Link>
 
-      <Wrapper $isscrolled={isScrolled} $iscurrentpage={isCurrentPage}>
+      <Wrapper $isscrolled={isScrolled}>
         MY
         <IconWrap
           animate={
@@ -148,7 +134,7 @@ const Header = () => {
         >
           <CustomIcons.HeartIcon />
         </IconWrap>
-        {title}
+        {currentPageName}
       </Wrapper>
 
       <Menu />
