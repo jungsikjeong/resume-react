@@ -1,26 +1,26 @@
 import { ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+import Footer from './common/footer';
 import Header from './common/header';
 import ScrollProgressBar from './common/scroll-progress-bar';
 import TopMoveButton from './top-move-button';
-import Footer from './common/footer';
-import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
-import UseCurrentPage from '../hook/use-current-page';
-import Loading from './common/loading';
 
 interface LayoutProps {
   children: ReactNode;
+  isLayoutMaxWidth?: boolean;
 }
 
 const Container = styled.div`
   overflow: hidden;
 `;
 
-const Wrapper = styled(motion.div)<{ $iscurrentpage: boolean }>`
+const Wrapper = styled(motion.div)<{ $islayoutmaxwidth: boolean }>`
   position: relative;
-  max-width: ${({ $iscurrentpage }) => ($iscurrentpage ? '100%' : '1280px')};
+  max-width: ${({ $islayoutmaxwidth }) =>
+    $islayoutmaxwidth ? '1280px' : '100%'};
   margin: 0 auto;
 
   @media (max-width: 1460px) {
@@ -31,9 +31,7 @@ const Wrapper = styled(motion.div)<{ $iscurrentpage: boolean }>`
   }
 `;
 
-const Layout = ({ children }: LayoutProps) => {
-  const { isCurrentPage } = UseCurrentPage({ currentPathname: '/project' });
-
+const Layout = ({ children, isLayoutMaxWidth = true }: LayoutProps) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -47,11 +45,11 @@ const Layout = ({ children }: LayoutProps) => {
       <ScrollProgressBar />
       <Header />
       <Wrapper
+        $islayoutmaxwidth={isLayoutMaxWidth}
         key={location.pathname || ''}
         initial={{ x: 10, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        $iscurrentpage={isCurrentPage}
       >
         {children}
         <TopMoveButton />

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
-import StyledButton from '../../components/common/styled-button';
 import blog from '../../assets/json/blog.json';
+import StyledButton from '../../components/common/styled-button';
 
 const Container = styled.div`
   position: relative;

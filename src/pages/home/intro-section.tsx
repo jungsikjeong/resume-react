@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
 import { inView } from 'framer-motion';
-import StyledButton from '../../components/common/styled-button';
+
 import { useNavigate } from 'react-router-dom';
 import { IintroItem } from '../../interface/intro-item';
 import FormattedText from '../../components/common/formatted-text';
+import StyledButton from '../../components/common/styled-button';
 
 const Container = styled.div`
   margin-top: 140px;

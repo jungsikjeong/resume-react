@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { styled } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import StyledButton from '../../components/common/styled-button';
 import EamilForm from '../../components/email-form';
 import { useRecoilValue } from 'recoil';
 import { themeState } from '../../atoms/theme';
+import StyledButton from '../../components/common/styled-button';
 
 const Container = styled.div``;
 

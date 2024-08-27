@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { styled } from 'styled-components';
 import CustomIcons from '../assets/svgIcon/icons';
-import StyledButton from './common/styled-button';
 import FlexBox from './flex-box/flex-box';
+import StyledButton from './common/styled-button';
 
 const Container = styled.div`
   max-width: 550px;
