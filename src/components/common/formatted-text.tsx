@@ -4,6 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div<{ $fontsize?: string }>`
+  font-weight: 500;
+
   &.title {
     text-align: center;
     font-size: 2rem;

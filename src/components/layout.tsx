@@ -8,7 +8,6 @@ import Footer from './common/footer';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import UseCurrentPage from '../hook/use-current-page';
-import Loading from './common/loading';
 
 interface LayoutProps {
   children: ReactNode;
@@ -32,9 +31,9 @@ const Wrapper = styled(motion.div)<{ $iscurrentpage: boolean }>`
 `;
 
 const Layout = ({ children }: LayoutProps) => {
-  const { isCurrentPage } = UseCurrentPage({ currentPathname: '/project' });
-
   const location = useLocation();
+  // `/project` 및 그 하위 경로(`/project/:date/:id`)에서 다른 스타일을 적용
+  const { isCurrentPage } = UseCurrentPage({ currentPathname: '/project' });
 
   useEffect(() => {
     window.scrollTo({

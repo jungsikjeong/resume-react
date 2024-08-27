@@ -19,6 +19,8 @@ const Router = () => {
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/project' element={<ProjectPage />} />
+
+        <Route path='/project/:date/:id' element={<ProjectPage />} />
       </Routes>
     </Suspense>
   );

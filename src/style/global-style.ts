@@ -103,6 +103,12 @@ input{
 .mt-4{
   margin-top:4rem;
 }
+.mt-5{
+  margin-top:5rem;
+}
+.mt-6{
+  margin-top:6rem;
+}
 
 .color-white{
   color:#FFFFFF;

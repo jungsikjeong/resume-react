@@ -11,7 +11,9 @@ const UseCurrentPage = ({ currentPathname }: IUseCurrentPageProps) => {
   const [isCurrentPage, setIsCurrentPage] = useState(false);
 
   useEffect(() => {
-    setIsCurrentPage(location.pathname === currentPathname);
+    setIsCurrentPage(
+      new RegExp(`^${currentPathname}(\/.*)?$`).test(location.pathname)
+    );
   }, [location.pathname, currentPathname]);
 
   return { isCurrentPage };

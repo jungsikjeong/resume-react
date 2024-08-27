@@ -51,6 +51,7 @@ const Figure = styled.figure`
   transition:
     opacity 0.3s ease-in-out,
     visibility 0.3s ease-in-out;
+  z-index: 999;
 
   @media (max-width: 767px) {
     max-width: 250px;
@@ -105,12 +106,11 @@ const ProjectItem = ({ item }: IProjectItemProps) => {
     requestRef.current = requestAnimationFrame(loop);
   }, []);
 
-  const onPageMove = (id: number) => {
-    navigate(`/project`, {
-      state: {
-        item,
-      },
-    });
+  const onPageMove = (item: any) => {
+    const date = item?.date?.slice(0, 4);
+    const id = item?.id;
+
+    navigate(`/project/${date}/${id}`);
   };
 
   useEffect(() => {
@@ -123,7 +123,7 @@ const ProjectItem = ({ item }: IProjectItemProps) => {
     <Item
       onMouseMove={(e) => handleMouseMove(e)}
       onMouseLeave={handleMouseLeave}
-      onClick={() => onPageMove(item.id)}
+      onClick={() => onPageMove(item)}
     >
       <Figure ref={figureRef as any}>
         <img src={item.thumbnail} alt='' />
