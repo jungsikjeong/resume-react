@@ -7,6 +7,8 @@ import { isHeaderColorstate } from '../../atoms/is-header-color';
 import Project00 from './2023/project00';
 import Project01 from './2023/project01';
 import Project02 from './2023/project02';
+import Project03 from './2023/project03';
+import Project04 from './2023/project04';
 
 const Container = styled.div`
   position: relative;
@@ -55,6 +57,12 @@ const Project = () => {
 
       {location?.pathname === '/project/2023/2' && (
         <Project02 visible={visible} />
+      )}
+      {location?.pathname === '/project/2023/3' && (
+        <Project03 visible={visible} />
+      )}
+      {location?.pathname === '/project/2023/4' && (
+        <Project04 visible={visible} />
       )}
     </Container>
   );

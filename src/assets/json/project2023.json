@@ -29,20 +29,10 @@
     "date": "2023.03.24 ~ 2023.04.27",
     "contents": [],
     "images": [
-      "./images/projects/NewJeans-Gallery1.gif",
-      "./images/projects/NewJeans-Gallery2.gif"
+      "/images/projects/NewJeans-Gallery1.gif",
+      "/images/projects/NewJeans-Gallery2.gif"
     ],
-    "demo": "https://new-jeans-gallery.vercel.app/",
-    "description": "벨로그라는 개발자 블로그에서 어떤분의 작업물을 보고 마음에들어 카피캣하였습니다. <br/> 최근에 배운 TypeScript를 사이트에 적용했습니다.<br/> 타입 지정은 type 키워드 보다 유연하고 여러 라이브러리에서 선호하는 방식인 interface키워드를 주로 사용해줬습니다. <br/>전역으로 상태관리를 해야하는 경우가 생겼는데, 프로젝트 규모가 작아 react-recoil로 status를 관리해줬습니다.",
-    "whatIDid": [
-      "react-awesome-reveal라이브러리를 활용한 애니메이션 구현",
-      "시맨틱한 태그 사용",
-      "로컬스토리지를 활용한 게시글 작성 기능 구현"
-    ],
-    "whatILearned": [
-      "TypeScript를 React에 통합하여 사용함으로써 타입 속성을 더 유연하게 적용하는 방법을 익힐 수 있었습니다. 또한, 스프라이트 이미지의 활용법을 학습하고 그에 대한 이해가 높아졌습니다.",
-      "다른 사람의 HTML 구조를 분석하면서 웹 페이지의 구현 방식 및 구조에 대해 보다 심층적으로 이해할 수 있었습니다. 이를 통해 레이아웃 설계, 시맨틱 마크업, 스타일링 패턴을 습득하고 발전시킬 수 있었습니다. 또한,이를 토대로 제 프로젝트에 적용해 나가는 데 도움이 되었습니다."
-    ]
+    "demo": "https://new-jeans-gallery.vercel.app/"
   },
   {
     "id": 3,

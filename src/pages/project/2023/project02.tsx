@@ -93,7 +93,7 @@ const Project02 = ({ visible }: IProjectProps) => {
 
             <ButtonWrap>
               <Link
-                to={'https://github.com/jungsikjeong/newJeans'}
+                to={'https://github.com/jungsikjeong/newJeansGallery'}
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -104,56 +104,43 @@ const Project02 = ({ visible }: IProjectProps) => {
             </ButtonWrap>
           </FlexBox>
 
+          <FormattedText type='sub-title mt-6' message={'주요 기능 및 기여'} />
+
+          <ImageWrap className='mt-1'>
+            <Image
+              src={'/images/projects/NewJeans-Gallery1.gif'}
+              alt='project-img'
+            />
+          </ImageWrap>
+
+          <FormattedText
+            type='text'
+            message={
+              'react-awesome-reveal 라이브러리를 사용해 애니메이션 효과를 추가하여 UX를 개선했습니다.\n시맨틱한 HTML 태그를 적극 활용하여 SEO와 접근성을 개선했습니다.'
+            }
+            fontSize='15px'
+          />
+
           <ImageWrap className='mt-4'>
-            <Image src={'/images/projects/NewJeans!1.gif'} alt='project-img' />
+            <Image
+              src={'/images/projects/NewJeans-Gallery2.gif'}
+              alt='project-img'
+            />
           </ImageWrap>
 
           <FormattedText
-            type='sub-title mt-2'
-            message={'회원가입 및 로그인 기능 (JWT 활용)'}
-          />
-
-          <FormattedText
-            type='text'
-            message={
-              '회원가입 시, 사용자는 이메일과 비밀번호를 입력하고,\n bcrypt를 통해 비밀번호를 암호화하여 안전하게 저장합니다.\n\n로그인 시, 입력한 비밀번호를 데이터베이스의 해시된 비밀번호와 대조 후, JWT 토큰을 발급하여 서버 측 세션 없이 인증을 처리해줬습니다.\n\n JWT 토큰 인증을 통해 로그인 상태를 유지하며, 클라이언트는 요청 시마다 토큰을 헤더에 포함해 유저 신원을 확인합니다.\n 토큰에는 유효 기간이 설정되어 만료 시 재로그인이 필요하며, 이를 통해 보안성을 높였습니다.'
-            }
+            type='text mt-1'
+            message={'로컬 스토리지를 활용한 게시글 작성 기능을 구현했습니다.'}
             fontSize='15px'
           />
 
-          <ImageWrap className='mt-6'>
-            <Image src={'/images/projects/NewJeans!2.gif'} alt='project-img' />
-          </ImageWrap>
-
-          <FormattedText
-            type='sub-title mt-2'
-            message={
-              '이미지 커스터마이징 기능 개발 (use-image 라이브러리 활용)'
-            }
-          />
+          <FormattedText type='sub-title mt-4' message={'끝으로..'} />
 
           <FormattedText
             type='text'
-            message={
-              'use-image 라이브러리를 사용하여 이미지를 자유롭게 커스터마이징할 수 있는 기능을 개발했습니다.\n이를 통해 사용자들이 자신만의 개성 있는 포토 카드를 손쉽게 제작할 수 있었습니다.'
-            }
-            fontSize='15px'
-          />
-
-          <ImageWrap className='mt-6'>
-            <Image src={'/images/projects/NewJeans!3.gif'} alt='project-img' />
-          </ImageWrap>
-
-          <FormattedText
-            type='sub-title mt-2'
-            message={'게시글 작성/ 수정/ 삭제/ 검색 기능'}
-          />
-
-          <FormattedText
-            type='text'
-            message={
-              '유저가 포토 카드를 업로드하고 게시글을 관리할 수 있도록 했습니다.\n 이 밖에도 게시글 무한 스크롤 페이지네이션 기능과 \n사용자가 자신의 프로필을 수정 할 수 있는 기능을 구현했습니다.'
-            }
+            message={`리액트에서 propTypes로 타입을 체크하는것과 TypeScript로 타입을 체크하는것을 비교해보며\n 타입스크립트로 타입 적용을할 때의 유연함과 안정성을 직접 체감할 수 있었습니다.\n
+              무엇보다 타입스크립트를 사용하며 좋았던점은, 타입스크립트의 자동완성 및 타입 추론 기능을 통해 코드 작성 시 데이터 타입을 명확하게 인식할 수 있었으며, 이는 코드의 안정성과 가독성을 크게 향상시켰습니다.\n특히 .map()과 같은 메서드 사용 시 해당 데이터의 타입을 즉시 확인하고, 올바른 메서드와 속성을 제안받는 등 편리함의 만족도가 상당히 높았습니다.
+              \n또한, 스프라이트 이미지를 활용해 스크롤할 때마다 고양이가 움직이는 재미있는 효과를 구현하면서\n 이미지 최적화와 활용법에 대해 더 깊이 이해하게 되었습니다.`}
             fontSize='15px'
           />
         </InnerWrap>
