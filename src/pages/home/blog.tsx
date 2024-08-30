@@ -60,8 +60,8 @@ const Blog = () => {
       <h1>블로그 살펴보기</h1>
 
       <List>
-        {blog?.map((item) => (
-          <Item>
+        {blog?.map((item, index) => (
+          <Item key={index}>
             <a href={item?.link} target='_blank' rel='noopener noreferrer'>
               <Image src={item?.src} alt='blog-img' />
             </a>
