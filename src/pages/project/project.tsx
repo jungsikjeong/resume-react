@@ -10,6 +10,9 @@ import Project02 from './2023/project02';
 import Project03 from './2023/project03';
 import Project04 from './2023/project04';
 
+import Project2400 from './2024/project24-00';
+import Project2401 from './2024/project24-01';
+
 const Container = styled.div`
   position: relative;
 `;
@@ -63,6 +66,13 @@ const Project = () => {
       )}
       {location?.pathname === '/project/2023/4' && (
         <Project04 visible={visible} />
+      )}
+
+      {location?.pathname === '/project/2024/0' && (
+        <Project2400 visible={visible} />
+      )}
+      {location?.pathname === '/project/2024/1' && (
+        <Project2401 visible={visible} />
       )}
     </Container>
   );

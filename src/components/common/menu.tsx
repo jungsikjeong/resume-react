@@ -163,7 +163,7 @@ const Menu = () => {
             >
               {location.pathname === '/projects' && <FaArrowRightLong />}
               <span className='text'>
-                프로젝트 <Count>32</Count>
+                프로젝트 <Count>7</Count>
               </span>
             </SLink>
           </Item>
