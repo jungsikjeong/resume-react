@@ -156,10 +156,7 @@ const Carousel = () => {
     >
       <SwiperSlide>
         <ImageWrap>
-          <Image
-            src='http://localhost:3000/images/projects/old/gongcha1.png'
-            alt='preview-img'
-          />
+          <Image src='/images/projects/old/gongcha1.png' alt='preview-img' />
 
           <TextWrap>
             <Title>
@@ -183,10 +180,7 @@ const Carousel = () => {
 
       <SwiperSlide>
         <ImageWrap>
-          <Image
-            src='http://localhost:3000/images/thumbnail/Vue-book.gif'
-            alt='preview-img'
-          />
+          <Image src='/images/thumbnail/Vue-book.gif' alt='preview-img' />
 
           <TextWrap>
             <Title>
@@ -209,10 +203,7 @@ const Carousel = () => {
 
       <SwiperSlide>
         <ImageWrap>
-          <Image
-            src='http://localhost:3000/images/projects/read-a-perfume.gif'
-            alt='preview-img'
-          />
+          <Image src='/images/projects/read-a-perfume.gif' alt='preview-img' />
 
           <TextWrap>
             <Title>향기의 세계를 탐험하다!</Title>
@@ -232,7 +223,7 @@ const Carousel = () => {
       <SwiperSlide>
         <ImageWrap>
           <Image
-            src='http://localhost:3000/images/thumbnail/NewJeans-Gallery.gif'
+            src='/images/thumbnail/NewJeans-Gallery.gif'
             alt='preview-img'
           />
 
