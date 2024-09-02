@@ -47,28 +47,27 @@ const ProjectList = () => {
     <Container>
       <Year>
         <span className='year'>
+          2024
+          <ProjectCount>{project2024.length}</ProjectCount>
+        </span>
+      </Year>
+
+      <List>
+        {project2024
+          ?.slice()
+          ?.reverse()
+          ?.map((item) => <ProjectItem item={item} key={item.id} />)}
+      </List>
+      <Dummy />
+
+      <Year>
+        <span className='year'>
           2023
           <ProjectCount>{project2023.length}</ProjectCount>
         </span>
       </Year>
       <List>
         {project2023
-          ?.slice()
-          ?.reverse()
-          ?.map((item) => <ProjectItem item={item} key={item.id} />)}
-      </List>
-
-      <Dummy />
-
-      <Year>
-        <span className='year'>
-          2024
-          <ProjectCount>{project2023.length}</ProjectCount>
-        </span>
-      </Year>
-
-      <List>
-        {project2024
           ?.slice()
           ?.reverse()
           ?.map((item) => <ProjectItem item={item} key={item.id} />)}
