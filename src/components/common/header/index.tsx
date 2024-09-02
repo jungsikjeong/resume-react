@@ -1,18 +1,34 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
+import CustomIcons from '../../../assets/svgIcon/icons';
+import { isHeaderColorstate } from '../../../atoms/is-header-color';
+import { menuState } from '../../../atoms/menu';
+import useScrollPosition from '../../../hook/use-scroll-position';
+import Menu from '../menu';
+import UseHeaderSetTitle from './hook/use-header-set-title';
 
-import CustomIcons from '../../assets/svgIcon/icons';
-import useScrollPosition from '../../hook/use-scroll-position';
-import Menu from './menu';
+const Overlay = styled.div`
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(34, 34, 34, 0.5);
+  visibility: visible;
+`;
 
-const Container = styled.header<{ $isscrolled: boolean }>`
+const Container = styled.header<{
+  $isscrolled: boolean;
+}>`
   padding: 1rem 3rem;
   font-family: 'VariableFont_wght', sans-serif;
   font-weight: 600;
   height: 130px;
-  transition: all 0.2s ease-in-out;
+  /* background-color: ${({ theme }) => theme.colorBg}; */
+  transition: all 0.2s ease;
 
   @media (max-width: 1460px) {
     position: fixed;
@@ -21,23 +37,32 @@ const Container = styled.header<{ $isscrolled: boolean }>`
     right: 0;
     z-index: 400;
     height: ${({ $isscrolled }) => ($isscrolled ? '60px' : '130px')};
-    background-color: ${({ theme }) => theme.colorWhite};
+    background-color: ${({ theme }) => theme.colorBg};
+    color: ${({ theme }) => `${theme.colorMainFont} !important`};
   }
+
   @media (max-width: 767px) {
     height: ${({ $isscrolled }) => ($isscrolled ? '60px' : '60px')};
   }
 `;
 
-const Wrapper = styled.div<{ $isscrolled: boolean }>`
+const Wrapper = styled.div<{
+  $isscrolled: boolean;
+}>`
   display: flex;
   position: absolute;
   top: 50px;
   left: 50%;
   visibility: ${({ $isscrolled }) => ($isscrolled ? 'hidden' : 'visible')};
   transform: translateX(-50%);
+  z-index: 300;
 
   @media (max-width: 767px) {
     top: ${({ $isscrolled }) => ($isscrolled ? '50px' : '20px')};
+  }
+
+  @media (max-width: 486px) {
+    display: none;
   }
 `;
 
@@ -78,22 +103,19 @@ const Logo = styled.img<{ $isscrolled: boolean }>`
 `;
 
 const Header = () => {
-  const [title, setTitle] = useState('web');
+  const { currentPageName } = UseHeaderSetTitle();
+
+  const isHeaderColor = useRecoilValue(isHeaderColorstate);
+  const [isMenu, setMenuClose] = useRecoilState(menuState);
   const isScrolled = useScrollPosition();
 
-  const location = useLocation();
-
-  useEffect(() => {
-    const pathSegments =
-      location.pathname === '/'
-        ? 'WEB'
-        : location.pathname.split('/').join('').toUpperCase();
-
-    setTitle(pathSegments);
-  }, [location.pathname]);
-
   return (
-    <Container $isscrolled={isScrolled}>
+    <Container
+      $isscrolled={isScrolled}
+      className={isHeaderColor && !isMenu ? 'color-white' : ''}
+    >
+      {isMenu && <Overlay onClick={() => setMenuClose(false)} />}
+
       <Link to='/'>
         <Logo src='/images/logo.jpeg' $isscrolled={isScrolled} />
       </Link>
@@ -112,8 +134,9 @@ const Header = () => {
         >
           <CustomIcons.HeartIcon />
         </IconWrap>
-        {title}
+        {currentPageName}
       </Wrapper>
+
       <Menu />
     </Container>
   );

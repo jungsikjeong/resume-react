@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -39,5 +39,47 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      (function () {
+        function getInitialColorMode() {
+          const isClient = typeof window !== 'undefined';
+          if (isClient) {
+            const persistedColorPreference =
+              window.localStorage.getItem('theme');
+
+            if (persistedColorPreference === '0') {
+              return 'light';
+            } else if (persistedColorPreference === '1') {
+              return 'dark';
+            }
+
+            const systemPreference = window.matchMedia(
+              '(prefers-color-scheme: dark)'
+            );
+            if (systemPreference.matches) {
+              return 'dark';
+            }
+            return 'light';
+          }
+        }
+
+        const colorMode = getInitialColorMode();
+
+        document.documentElement.style.setProperty(
+          'background-color',
+          colorMode === 'light' ? '#F7F7FA' : '#0c1219'
+        );
+        document.documentElement.style.setProperty(
+          'color',
+          colorMode === 'light' ? 'rgb(55, 53, 47)' : '#FAFAFA'
+        );
+
+        const header = document.querySelector('header');
+        if (header) {
+          header.style.backgroundColor =
+            colorMode === 'light' ? '#F7F7FA' : '#0c1219';
+        }
+      })();
+    </script>
   </body>
 </html>

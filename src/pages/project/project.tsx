@@ -1,18 +1,80 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
+import styled from 'styled-components';
+import { isHeaderColorstate } from '../../atoms/is-header-color';
+
+import Project00 from './2023/project00';
+import Project01 from './2023/project01';
+import Project02 from './2023/project02';
+import Project03 from './2023/project03';
+import Project04 from './2023/project04';
+
+import Project2400 from './2024/project24-00';
+import Project2401 from './2024/project24-01';
+
+const Container = styled.div`
+  position: relative;
+`;
 
 const Project = () => {
   const location = useLocation();
-  const navigate = useNavigate();
 
-  const [item, setItem] = useState({ ...location.state });
+  const setIsHeaderColor = useSetRecoilState(isHeaderColorstate);
 
-  console.log(item);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const changePoint = 961;
+
+      if (scrollY > changePoint) {
+        setIsHeaderColor(false);
+        setVisible(false);
+      } else {
+        setIsHeaderColor(true);
+        setVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => {
+      setIsHeaderColor(false);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [setIsHeaderColor, setVisible]);
+
   return (
-    <div>
-      Project
-      <button onClick={() => navigate(-1)}>뒤로가기</button>
-    </div>
+    <Container>
+      {location?.pathname === '/project/2023/0' && (
+        <Project00 visible={visible} />
+      )}
+
+      {location?.pathname === '/project/2023/1' && (
+        <Project01 visible={visible} />
+      )}
+
+      {location?.pathname === '/project/2023/2' && (
+        <Project02 visible={visible} />
+      )}
+      {location?.pathname === '/project/2023/3' && (
+        <Project03 visible={visible} />
+      )}
+      {location?.pathname === '/project/2023/4' && (
+        <Project04 visible={visible} />
+      )}
+
+      {location?.pathname === '/project/2024/0' && (
+        <Project2400 visible={visible} />
+      )}
+      {location?.pathname === '/project/2024/1' && (
+        <Project2401 visible={visible} />
+      )}
+    </Container>
   );
 };
 

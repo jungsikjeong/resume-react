@@ -28,11 +28,12 @@ button{
   outline: none;
 }
 
+
+
 body {
   color:${({ theme }) => theme.colorMainFont};
   background-color:${({ theme }) => theme.colorBg};
   transition: all 0.25s linear;
-
 }
 
 p{
@@ -88,6 +89,29 @@ input{
   &:hover{
     color:${({ theme }) => theme.colorMainFont};
   }
+}
+
+.mt-1{
+  margin-top:1rem;
+}
+.mt-2{
+  margin-top:2rem;
+}
+.mt-3{
+  margin-top:3rem;
+}
+.mt-4{
+  margin-top:4rem;
+}
+.mt-5{
+  margin-top:5rem;
+}
+.mt-6{
+  margin-top:6rem;
+}
+
+.color-white{
+  color:#FFFFFF;
 }
 
 

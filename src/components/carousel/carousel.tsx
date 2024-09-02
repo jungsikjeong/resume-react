@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SwiperStyle = styled(Swiper)`
   padding: 2rem 0 3.5rem;
@@ -136,6 +137,11 @@ const Button = styled.button`
 `;
 
 const Carousel = () => {
+  const navigate = useNavigate();
+  const onClick = (link: string) => {
+    navigate(link);
+  };
+
   return (
     <SwiperStyle
       pagination={{
@@ -151,7 +157,7 @@ const Carousel = () => {
       <SwiperSlide>
         <ImageWrap>
           <Image
-            src='http://localhost:3000/images/portfolio/gongcha1.png'
+            src='http://localhost:3000/images/projects/old/gongcha1.png'
             alt='preview-img'
           />
 
@@ -168,7 +174,9 @@ const Carousel = () => {
               여러 사람들과 공유해보세요!
             </Text>
 
-            <Button>자세히 보기</Button>
+            <Button onClick={() => onClick('/project/2024/1')}>
+              자세히 보기
+            </Button>
           </TextWrap>
         </ImageWrap>
       </SwiperSlide>
@@ -192,7 +200,9 @@ const Carousel = () => {
               나만의 스토리를 저장하세요!
             </Text>
 
-            <Button>자세히 보기</Button>
+            <Button onClick={() => onClick('/project/2024/0')}>
+              자세히 보기
+            </Button>
           </TextWrap>
         </ImageWrap>
       </SwiperSlide>
@@ -200,7 +210,7 @@ const Carousel = () => {
       <SwiperSlide>
         <ImageWrap>
           <Image
-            src='http://localhost:3000/images/portfolio/read-a-perfume.gif'
+            src='http://localhost:3000/images/projects/read-a-perfume.gif'
             alt='preview-img'
           />
 
@@ -212,7 +222,9 @@ const Carousel = () => {
               향기와 이야기의 공간! <br />
             </Text>
 
-            <Button>자세히 보기</Button>
+            <Button onClick={() => onClick('/project/2023/4')}>
+              자세히 보기
+            </Button>
           </TextWrap>
         </ImageWrap>
       </SwiperSlide>
@@ -232,7 +244,9 @@ const Carousel = () => {
               <br />
             </Text>
 
-            <Button>갤러리 클릭</Button>
+            <Button onClick={() => onClick('/project/2023/2')}>
+              갤러리 클릭
+            </Button>
           </TextWrap>
         </ImageWrap>
       </SwiperSlide>

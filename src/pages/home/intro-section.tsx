@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
 import { inView } from 'framer-motion';
+
+import { useNavigate } from 'react-router-dom';
+import { IintroItem } from '../../interface/intro-item';
+import FormattedText from '../../components/common/formatted-text';
 import StyledButton from '../../components/common/styled-button';
 
 const Container = styled.div`
@@ -65,16 +69,6 @@ const Box = styled.div`
     padding: 32px 24px;
     height: 100%;
   }
-
-  p {
-    line-height: 26px;
-    font-weight: bold;
-
-    @media (max-width: 767px) {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
 `;
 
 const BtnWrap = styled.div`
@@ -92,9 +86,10 @@ const BtnWrap = styled.div`
 `;
 
 const Image = styled.img`
+  max-height: 530px;
   width: 100%;
   height: auto;
-  aspect-ratio: auto 1280 / 1024;
+  aspect-ratio: auto 1/1;
   border-radius: 16px;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -105,18 +100,31 @@ const Image = styled.img`
 
   @media (max-width: 767px) {
     border-radius: 0px;
+    max-height: 500px;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 0px;
+    max-height: 250px;
   }
 `;
 
 interface IIntroSectionProps {
-  title: string;
-  contents: string;
-  url: string;
-  order: number;
+  item: IintroItem;
 }
 
-const IntroSection = ({ title, contents, url, order }: IIntroSectionProps) => {
+const IntroSection = ({ item }: IIntroSectionProps) => {
+  const navigate = useNavigate();
+
   const imageRef = useRef<HTMLImageElement>(null);
+
+  const onPageMove = () => {
+    navigate('/intro', {
+      state: {
+        item,
+      },
+    });
+  };
 
   useEffect(() => {
     const handleInView = (inViewTarget: HTMLImageElement | null) => {
@@ -132,19 +140,22 @@ const IntroSection = ({ title, contents, url, order }: IIntroSectionProps) => {
 
   return (
     <Container>
-      <ContentsWrap order={order}>
+      <ContentsWrap order={item.id}>
         <Box>
-          <h3>{title}</h3>
-          <p>{contents} ​</p>
+          <h3>{item.title}</h3>
+          {/* <p>{item.prevViewText} ​</p> */}
+          <FormattedText message={item?.prevViewText} type='prev-view-text' />
 
           <BtnWrap>
-            <StyledButton>자세히 보기</StyledButton>
+            <StyledButton onAction={() => onPageMove()}>
+              자세히 보기
+            </StyledButton>
           </BtnWrap>
         </Box>
       </ContentsWrap>
 
-      <ImageWrap order={order}>
-        <Image ref={imageRef} src={url} alt='' />
+      <ImageWrap order={item.id}>
+        <Image ref={imageRef} src={item?.mainImage} alt='main-img' />
       </ImageWrap>
     </Container>
   );
