@@ -2,12 +2,10 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import Layout from '../components/layout';
 import { HomePage } from '../pages/home';
-import {
-  LazyIntroDetailPage,
-  LazyProfilePage,
-  LazyProjectPage,
-  LazyProjectsPage,
-} from './lazy-pages';
+import { IntroDetailPage } from '../pages/intro-detail';
+import { ProfilePage } from '../pages/profile';
+import { ProjectPage } from '../pages/project';
+import { ProjectsPage } from '../pages/projects';
 
 interface RouterBase {
   path: string; // 페이지 경로
@@ -30,27 +28,27 @@ const routerData: RouterElement[] = [
   {
     label: '인트로 상세 페이지',
     path: '/intro',
-    element: <LazyIntroDetailPage />,
+    element: <IntroDetailPage />,
     isLayout: true,
   },
 
   {
     label: '프로필 페이지',
     path: '/profile',
-    element: <LazyProfilePage />,
+    element: <ProfilePage />,
     isLayout: true,
   },
 
   {
     label: '프로젝트 리스트 목록',
     path: '/projects',
-    element: <LazyProjectsPage />,
+    element: <ProjectsPage />,
     isLayout: true,
   },
   {
     label: '프로젝트 상세 페이지',
     path: '/project/:date/:id',
-    element: <LazyProjectPage />,
+    element: <ProjectPage />,
     isLayout: true,
     isLayoutMaxWidth: false,
   },
